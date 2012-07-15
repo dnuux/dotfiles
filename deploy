@@ -23,6 +23,7 @@ dotfiles_ncmpcpp()  { link ncmpcpp;                 }
 dotfiles_python()   { link python/pythonstartup;    }
 dotfiles_rtorrent() { link rtorrent/rtorrent.rc;    }
 dotfiles_subtle()   { link subtle .config/subtle;   }
+dotfiles_vifm()     { link vifm;                    }
 dotfiles_wget()     { link wget/wgetrc;             }
 dotfiles_zathura()  { link zathura .config/zathura; }
 
