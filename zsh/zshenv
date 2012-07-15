@@ -51,7 +51,7 @@ export LANG=en_US.UTF-8
 
 # Editors
 export EDITOR="vim"
-export VISUAL="vim"
+export VISUAL="gvim"
 export BROWSER="firefox-beta-bin"
 export PAGER="vimpager" && alias less=$PAGER
 
