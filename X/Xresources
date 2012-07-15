@@ -25,7 +25,6 @@ dzen2.background: #151515
 URxvt.perl-ext-common: default,url-select,keyboard-select,confirm-paste
 URxvt.keysym.Delete:   perl:url-select:select_next
 URxvt.keysym.M-Escape: perl:keyboard-select:activate
-URxvt.keysym.M-f:      perl:keyboard-select:search
 URxvt.urlLauncher:     firefox-beta-bin
 URxvt.underlineURLs:   true
 

@@ -12,6 +12,7 @@ set incsearch
 set nohlsearch
 set noiec
 set norunexec
+set notrash
 set novimhelp
 set scrolloff=4
 set slowfs=curlftpfs

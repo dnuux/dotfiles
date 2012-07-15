@@ -13,7 +13,8 @@ monster_init() {
     [[ -p "$ff" ]] && rm "$ff"
 }
 
-# keyboard layout
+# keyboard
+xset r rate 350 45
 setxkbmap fi nodeadkeys
 xmodmap "$HOME/.speedswapper"
 

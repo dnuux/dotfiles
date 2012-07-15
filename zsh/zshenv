@@ -52,9 +52,12 @@ export LANG=en_US.UTF-8
 # Editors
 export EDITOR="vim"
 export VISUAL="gvim"
-export BROWSER="firefox-beta-bin"
-export PAGER="vimpager" && alias less=$PAGER
 
-# Python startup file
+# Pager
+if (( $+commands[vimpager] )); then
+  export PAGER="vimpager" && alias less=$PAGER
+fi
+
+export BROWSER="firefox-beta-bin"
 export PYTHONSTARTUP="$HOME/.pythonstartup"
 
