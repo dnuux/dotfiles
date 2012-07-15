@@ -1,0 +1,23 @@
+# a single <tab> is enough
+set show-all-if-ambiguous on
+
+# list matches immediately
+set show-all-if-unmodified on
+
+# ignore case
+set completion-ignore-case on
+
+# length of the common prefix to display
+set completion-prefix-display-length 2
+
+# treat underscores and hyphens equally when completing
+set completion-map-case on
+
+# immediately add a trailing slash when autocompleting symlinks to directories
+set mark-symlinked-directories on
+
+# if there are more than 100 possible completions for a word, ask to show them all
+set completion-query-items 100
+
+# vi editing mode
+set editing-move vi

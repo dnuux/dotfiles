@@ -1,0 +1,270 @@
+" use Vim settings rather than vi, needs to be first
+set nocompatible
+
+" Vundle
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" Bundles
+Bundle 'bkad/CamelCaseMotion'
+Bundle 'ciaranm/securemodelines'
+Bundle 'Cloudef/dotFiles', {'rtp': '.vim/bundle/cSyntaxPlus/'}
+Bundle 'derekwyatt/vim-fswitch'
+Bundle 'ervandew/supertab'
+Bundle 'garbas/vim-snipmate'
+Bundle 'gmarik/vundle'
+Bundle 'godlygeek/tabular'
+Bundle 'honza/snipmate-snippets'
+Bundle 'ivanov/vim-ipython'
+Bundle 'kien/ctrlp.vim'
+Bundle 'Lokaltog/vim-easymotion'
+Bundle 'Lokaltog/vim-powerline'
+Bundle 'MarcWeber/vim-addon-mw-utils'
+Bundle 'mileszs/ack.vim'
+Bundle 'nvie/vim-flake8'
+Bundle 'powerman/vim-plugin-viewdoc'
+Bundle 'scrooloose/nerdtree'
+Bundle 'sjl/gundo.vim'
+Bundle 'tomtom/tlib_vim'
+Bundle 'Townk/vim-autoclose'
+Bundle 'tpope/vim-commentary'
+Bundle "tpope/vim-eunuch"
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-git'
+Bundle 'tpope/vim-repeat'
+Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-unimpaired'
+
+" General options
+syntax on                   " turn on syntax highlighting
+colorscheme cottonmouse     " colorscheme
+let mapleader = ","         " map leader to ,
+filetype plugin indent on   " turn on ftplugin and indent
+
+" Basic mappings
+command! W w
+command! Q q
+nmap H ^
+nmap L $
+nmap Y y$
+nmap Q @@
+nmap U :redo<CR>
+nnoremap <Space> za
+
+" For code golf
+command! Wc w !wc -c
+command! Ww w !wc -w
+
+" Use sane regexes
+nnoremap / /\v
+vnoremap / /\v
+
+" Jump to matching braces easily
+nnoremap <Tab> %
+vnoremap <Tab> %
+
+" Easier moving with wrapping
+nnoremap j gj
+nnoremap k gk
+
+" Disable search highlighting
+nnoremap <silent><leader><Space> :nohls<CR>
+
+" Pretty comments
+nnoremap <leader>l yyPVr=
+
+" Easier pane switching
+nnoremap <leader>v <C-w>v<C-w>l
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+" Easier buffer switching
+nmap <left> :bp<CR>
+nmap <right> :bn<CR>
+
+" Reselect visual block after indent/outdent
+vnoremap < <gv
+vnoremap > >gv
+
+" Strip all trailing whitespace from file
+nnoremap <leader>tr :%s/\s\+$//<CR>:let @/=''<CR>
+
+" Replace single line python imports with multiline
+nnoremap <leader>im :s/,/\rimport/<CR>
+
+" Reselect pasted text
+nnoremap <leader>p V`]`
+
+" Swap words
+nnoremap <leader>h "_yiw?\v\w+\_W+%#<CR>:s/\v(%#\w+)(\_W+)(\w+)/\3\2\1/<CR><C-o><C-l>:noh<cr>
+nnoremap <leader>l "_yiw:s/\v(%#\w+)(\_W+)(\w+)/\3\2\1/<CR><C-o>/\v\w+\_W+<CR><C-l>:noh<cr>
+
+" Gundo
+nnoremap <F6> :GundoToggle<CR>
+
+" NERDTree
+let g:NERDTreeChDirMode = 2
+let g:NERDTreeIgnore    = ['\~$', '\.swp$', '\.o$']
+let g:NERDTreeSortOrder = ['^__\.py$', '\/$', '*']
+let g:NERDTreeMinimalUI = 1
+nnoremap <F12> :NERDTreeToggle<CR>
+
+" Tabular
+nnoremap <leader>= :Tabular /=<CR>
+nnoremap <leader>: :Tabular /:<CR>
+
+" Ctrlp
+nnoremap § :CtrlPBuffer<CR>
+
+" EasyMotion
+let g:EasyMotion_leader_key = '<Leader>'
+
+" CamelCaseMotion
+map <silent> w <Plug>CamelCaseMotion_w
+map <silent> b <Plug>CamelCaseMotion_b
+map <silent> e <Plug>CamelCaseMotion_e
+sunmap w
+sunmap b
+sunmap e
+
+" Ack
+nnoremap <leader>a :Ack<Space>
+
+" IPython
+nnoremap <leader>i :IPython<CR>
+
+" FSwitch
+command! F  FSHere
+command! Fa FSSplitAbove
+command! Fb FSSplitBelow
+command! Fl FSSplitLeft
+command! Fr FSSplitRight
+
+" General options
+set encoding=utf-8               " set default encoding to UTF-8
+set backspace=start,indent,eol   " make backspace work like 'normal' text editors
+set wildmode=longest,list:full   " command prompt tab-completion
+set hidden                       " hide buffers instead of closing them
+set number                       " show line numbers
+set showcmd                      " show the command being typed
+set tabstop=4                    " width of a tab character in spaces
+set softtabstop=4                " defines number of spaces for when adding/remving tabs
+set shiftwidth=4                 " number of spaces to use for autoindent
+set expandtab                    " use spaces instead of tab characters
+set showmatch                    " show matching braces when text indicator is over them
+set ignorecase                   " ignore case when searching
+set smartcase                    " case sensitive only when capital letter in expression
+set hlsearch                     " highlight search terms
+set incsearch                    " show search matches as they are found
+set gdefault                     " replace globally by default
+set autoindent                   " copy current indent level when starting new line
+set smartindent                  " indent after braces, keywords, etc
+set noswapfile                   " don't make swap file
+set updatecount=0                " we don't use no swap files
+set pastetoggle=<F2>             " toggle paste mode via F2
+set mouse=a                      " enable mouse support
+set lazyredraw                   " don't redraw when executing macros
+set wrap                         " wrap lines
+set linebreak                    " don't wrap on middle of words
+set scrolloff=8                  " start scrolling when within 8 lines near top/bottom
+set autoread                     " turn on autoread
+set ttyfast                      " improve smoothness of redrawing
+set splitbelow                   " horizontal splits go to below
+set splitright                   " vertical splits go to right
+set foldmethod=indent            " fold indented blocks
+set foldnestmax=1                " maximum nesting of folds
+set laststatus=2                 " always show statusline
+set cursorline                   " higlight the line the cursor is on
+
+" Backup
+set backup
+set backupdir=~/.vim/backups
+set undofile
+set undodir=~/.vim/undo
+
+" Display invisible characters
+set listchars=trail:~,tab:\ \ ,extends:>,precedes:<
+set list
+
+" Ignore unndeeded files
+set wildignore+=*.bak,*.swp,*.git,*.pyc,*.pyo,*.o
+
+" Less indentation for some filetypes
+autocmd FileType vim,zsh,PKGBUILD set ts=2 sts=2 sw=2
+
+" Compile and run
+autocmd FileType python map <F9> :w \| :!python2 "%"<CR>
+autocmd FileType cpp    map <F9> :w \| :call RunMake("g++")<CR>
+autocmd FileType c      map <F9> :w \| :call RunMake("gcc")<CR>
+autocmd FileType sh     map <F9> :w \| :!./"%"<CR>
+
+" Spice up C syntax higlighting
+autocmd FileType c,cpp :call CSyntaxPlus()
+
+" Return cursor to the last line you were editing
+autocmd BufReadPost * if line("'\"") > 0 && line ("'\"") <= line("$")
+            \| exe "normal! g'\"" | endif
+
+" Resize splits with the window
+autocmd VimResized * exe "normal! \<C-w>="
+
+" Quickly toggle relativenumber
+if exists("&relativenumber")
+  function! s:ToggleRelativeNumber()
+    if &relativenumber
+      set norelativenumber
+      let &number = b:togglernu_number
+    else
+      let b:togglernu_number = &number
+      set relativenumber
+    endif
+  endfunction
+  nnoremap <silent> <leader>m :<C-U>call <SID>ToggleRelativeNumber()<CR>
+endif
+
+" Run make if Makefile exists, otherwise compile and run
+function! RunMake(compiler)
+  if filereadable("Makefile")
+    make
+  else
+    execute '!' . a:compiler . ' "%" -Wall -O2 -march=native && ./a.out'
+  endif
+endfunction
+
+" Ranger
+function! LaunchRanger()
+  silent !ranger --choosefile=/tmp/chosen
+  if filereadable('/tmp/chosen')
+    execute 'edit ' . system('cat /tmp/chosen')
+    call system('rm /tmp/chosen')
+  endif
+  redraw!
+endfunction
+nnoremap <leader>r :call LaunchRanger()<CR>
+
+" Append modeline to file
+function! AppendModeline(test1, test2, test3)
+  let l:modeline = printf(" vim: set sw=%d ts=%d sts=%d :",
+          \ &shiftwidth, &tabstop, &softtabstop)
+  let l:modeline = substitute(&commentstring, "%s", l:modeline, "")
+  call append(line("$"), "")
+  call append(line("$"), l:modeline)
+endfunction
+nnoremap <leader>ml :call AppendModeline()<CR>
+
+" Quickly jump to directories with fasd
+command! -nargs=* Z :call Z(<f-args>)
+function! Z(...)
+  let cmd = 'fasd -d -e printf'
+  for arg in a:000
+    let cmd = cmd . ' ' . arg
+  endfor
+  let path = system(cmd)
+  if isdirectory(path)
+    echo path
+    exec 'cd ' . path
+  endif
+endfunction
+

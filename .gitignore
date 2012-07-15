@@ -1,0 +1,12 @@
+# Vim
+vim/backups/
+vim/undo/
+
+# Pentadactyl
+pentadactyl/info/
+
+# Subtle
+subtle/subtle-contrib/
+
+# Ncmpcpp
+ncmpcpp/error.log

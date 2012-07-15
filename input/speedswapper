@@ -1,0 +1,18 @@
+!Swap Caps Lock and ESC
+remove Lock = Caps_Lock
+keysym Escape = Caps_Lock
+keysym Caps_Lock = Escape
+add Lock = Caps_Lock
+
+!Special keys for Logitech Illuminated Keyboard
+keycode 121 = XF86AudioMute
+keycode 122 = XF86AudioLowerVolume
+keycode 123 = XF86AudioRaiseVolume
+keycode 173 = XF86AudioPrev
+keycode 172 = XF86AudioPlay
+keycode 171 = XF86AudioNext
+keycode 179 = XF86Tools
+keycode 180 = XF86HomePage
+
+!Add $ to Shift+4 in fi nodeadkeys
+keycode 13 = 0x34 0x24

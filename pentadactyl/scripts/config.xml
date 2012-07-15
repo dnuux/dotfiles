@@ -1,0 +1,6 @@
+<UserScriptConfig>
+	<Script basedir="reddit_noclick" checkRemoteUpdates="true" dependhash="da39a3ee5e6b4b0d3255bfef95601890afd80709" description="Removes onclick handlers that interfere with vimperator's &quot;follow-hint&quot;" enabled="true" filename="reddit_noclick.user.js" installTime="1329051851436" lastUpdateCheck="1290349901000" modified="1290349901000" name="Reddit NoClick" namespace="akjdfkjs" runAt="document-end" updateAvailable="false" version="">
+		<Include>http://www.reddit.com/*</Include>
+		<Include>http://reddit.com/*</Include>
+	</Script>
+</UserScriptConfig>

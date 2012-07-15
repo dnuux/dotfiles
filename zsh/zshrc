@@ -1,0 +1,55 @@
+# Set the key mapping style to 'emacs' or 'vi'.
+zstyle ':omz:module:editor' keymap 'vi'
+
+# Auto convert .... to ../..
+zstyle ':omz:module:editor' dot-expansion 'yes'
+
+# Set case-sensitivity for completion, history lookup, etc.
+zstyle ':omz:*:*' case-sensitive 'no'
+
+# Color output (auto set to 'no' on dumb terminals).
+zstyle ':omz:*:*' color 'yes'
+
+# Auto set the tab and window titles.
+zstyle ':omz:module:terminal' auto-title 'yes'
+
+# Enable highlighters
+zstyle ':omz:module:syntax-highlighting' highlighters \
+    'main' \
+    'brackets' \
+    'pattern' \
+    'cursor'
+
+# Set the Zsh modules to load (man zshmodules).
+# zstyle ':omz:load' zmodule 'zprof'
+
+# Set the Zsh functions to load (man zshcontrib).
+# zstyle ':omz:load' zfunction 'zargs' 'zmv'
+
+# Set the plugins to load (browse plugin).
+# The order matters.
+zstyle ':omz:load' omodule \
+    'environment' \
+    'terminal' \
+    'editor' \
+    'history' \
+    'directory' \
+    'spectrum' \
+    'utility' \
+    'completion' \
+    'abbrev' \
+    'syntax-highlighting' \
+    'history-substring-search' \
+    'prompt' \
+    'archive' \
+    'fasd' \
+    'git' \
+    'pacman' \
+    'ssh-agent'
+
+# Set the prompt theme to load.
+zstyle ':omz:module:prompt' theme 'soliah'
+
+# This will make you shout: OH MY ZSHELL!
+source "$OMZ/init.zsh"
+

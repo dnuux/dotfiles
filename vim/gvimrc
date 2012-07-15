@@ -1,0 +1,6 @@
+colorscheme molokai
+
+set guicursor+=a:blinkon0
+"set guifont=PragmataPro\ 8
+set guifont=Monaco\ For\ Powerline\ 8
+set guioptions=

@@ -1,0 +1,47 @@
+!---------------------------------------------------------------------------
+! file:     ~/.Xresources
+! modified: July 2012
+! vim: set fenc=utf-8:nu:ai:si:et:ts=4:sw=4:ft=xdefaults:
+! --------------------------------------------------------------------------
+
+! -- Urxvt settings -- !
+URxvt.buffered:             true
+URxvt.background:           #1A1A1A
+URxvt.foreground:           #A9A9A9
+URxvt.cursorColor:          #5E468C
+URxvt.geometry:             100x30
+URxvt.transparent:          false
+URxvt.internalBorder:       10
+URxvt.title:                Urxvt
+URxvt*scrollBar_right:      false
+URxvt*scrollBar:            false
+URxvt*borderLess:           false
+
+! -- Xft settings -- !
+Xft.dpi:        96
+Xft.antialias:  true
+Xft.rgba:       rgb
+Xft.hinting:    true
+Xft.hinstyle:   hintfull
+Xft.autohint:   0
+Xft.lcdfilter:  lcddefault
+
+! -- Dzen settings -- !
+dzen2.font:       xft:DejaVu:bold:pixelsize=9:antialias=true
+dzen2.background: #151515
+
+! -- URxvt Extensions --!
+URxvt.perl-ext-common: default,url-select,keyboard-select,confirm-paste
+URxvt.keysym.Delete:   perl:url-select:select_next
+URxvt.keysym.M-Escape: perl:keyboard-select:activate
+URxvt.keysym.M-f:      perl:keyboard-select:search
+URxvt.urlLauncher:     firefox-beta-bin
+URxvt.underlineURLs:   true
+
+! -- Fonts -- !
+!URxvt.font:xft:envy code r:medium:pixelsize=12
+!URxvt.boldFont:xft:envy code r:medium:pixelsize=12
+URxvt.font:xft:Inconsolata-dz for Powerline:bold:pixelsize=11:antialias=true
+
+! -- Colours -- !
+#include "/home/elias/.colours/dark"
