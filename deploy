@@ -1,4 +1,5 @@
 #!/bin/sh
+#Author: vodik (http://github.com/vodik)
 
 dotfiles=$PWD
 
@@ -44,15 +45,17 @@ dotfiles_vim() {
   link vim
   link vim/vimrc
   link vim/gvimrc
+  git submodule update --init --recursive
 }
 
 dotfiles_zsh() {
-  git submodule update --init --recursive
   link zsh/zlogin
   link zsh/zlogout
   link zsh/zprofile
   link zsh/zshenv
   link zsh/zshrc
+
+  git submodule update --init --recursive
   link zsh/oh-my-zsh
 }
 
