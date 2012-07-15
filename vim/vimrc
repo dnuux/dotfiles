@@ -233,17 +233,6 @@ function! RunMake(compiler)
   endif
 endfunction
 
-" Ranger
-function! LaunchRanger()
-  silent !ranger --choosefile=/tmp/chosen
-  if filereadable('/tmp/chosen')
-    execute 'edit ' . system('cat /tmp/chosen')
-    call system('rm /tmp/chosen')
-  endif
-  redraw!
-endfunction
-nnoremap <leader>r :call LaunchRanger()<CR>
-
 " Append modeline to file
 function! AppendModeline(test1, test2, test3)
   let l:modeline = printf(" vim: set sw=%d ts=%d sts=%d :",

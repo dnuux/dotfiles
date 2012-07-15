@@ -10,3 +10,8 @@ subtle/subtle-contrib/
 
 # Ncmpcpp
 ncmpcpp/error.log
+
+# Vifm
+vifm/Trash/
+vifm/vifminfo
+vifm-help.txt

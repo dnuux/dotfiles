@@ -34,7 +34,7 @@ unclutter -idle 2 -noevents &
 (firefox-beta-bin &> /dev/null) &
 (sleep 10 && urxvtc -sl 0 -name cmus -e cmus) &
 (sleep 15 && urxvtc -sl 0 -name htop -e htop) &
-(sleep 20 && urxvtc -sl 0 -name ranger -e ranger) &
+(sleep 20 && urxvtc -sl 0 -name vifm -e vifm) &
 
 # window manager
 monster_init

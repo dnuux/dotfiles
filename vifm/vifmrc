@@ -1,0 +1,106 @@
+" vim: filetype=vifm :
+
+" colorscheme
+colorscheme cookies
+
+" options
+set fastrun
+set followlinks
+set history=20
+set ignorecase
+set incsearch
+set nohlsearch
+set noiec
+set norunexec
+set novimhelp
+set scrolloff=4
+set slowfs=curlftpfs
+set smartcase
+set sortnumbers
+set statusline="  %t%= %A %10u:%-7g %15s %20d  "
+set timefmt=%m/%d\ %H:%M
+set undolevels=20
+set vicmd=vim
+set vifminfo=dhistory,savedirs,chistory,state,tui,shistory,
+    \phistory,dirstack,registers,bookmarks
+set wildmenu
+
+" marks
+mark b ~/bin/
+mark d ~/documents/
+mark e ~/ext_hdd/
+mark h ~/
+mark l ~/ext_hdd/Lataukset/
+mark m ~/music/
+mark p ~/pictures/
+mark t ~/tmp/
+
+" commands
+command df df -h %m 2> /dev/null
+command diff vim -d %f %F
+command zip zip -r %f.zip %f
+command run !! ./%f
+command make !!make
+command vgrep vim "+grep %a"
+
+" filetypes
+
+" PDF
+filetype *.pdf zathura %f
+
+" Audio
+filetype *.wav,*.mp3,*.flac,*.ogg,*.m4a mplayer %f
+fileviewer *.mp3 mp3info
+
+" Video
+filextype *.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.vob,*.flv mplayer %f
+fileviewer *.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.vob
+         \ ffprobe -show_files -pretty %f 2> /dev/null
+
+" Web
+filetype *.html,*.htm firefox-beta-bin %f %i &
+
+" Object
+filetype *.o nm %f | less
+
+" Image
+filextype *.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm feh %f
+
+" MD5
+filetype *.md5
+       \ {Check MD5 hash sum}
+       \ md5sum -c %f,
+
+" Mappings
+
+nmap s :shell<cr>
+nmap S :sort<cr>
+nmap w :view<cr>
+nmap o :!gvim --remote-tab-silent %f<cr>
+nmap O :!gvim %f<cr>
+
+" Open file in the background using its default program
+nmap gb :file &<cr>l
+
+" Mappings for faster renaming
+nmap I cw<c-a>
+nmap cc cw<c-u>
+nmap A cw<c-w>
+
+" Opening console in current directory
+nmap ,t :!urxvtc &<cr>
+
+" Opening vim to edit .vifmrc
+nmap ,c :execute ':!vim $MYVIFMRC' | restart<cr>
+
+" Toggle wrap setting on ,w key
+nmap ,w :set wrap!<cr>
+
+" Example of standard two-panel file managers mappings
+nmap <f2> :rename<space>
+nmap <f3> :!less %f<cr>
+nmap <f4> :edit<cr>
+nmap <f5> :copy<cr>
+nmap <f6> :move<cr>
+nmap <f7> :mkdir<space>
+nmap <f8> :delete<cr>
