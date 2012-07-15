@@ -22,7 +22,7 @@ set urlseparator=',,'
 set wildmode=full
 
 " buftabs
-set buftabs-maxlength=25
+set buftabs-maxlength=20
 set buftabs-completer=~
 
 " noscript
@@ -32,11 +32,11 @@ nmap -builtin A :noscript toggletemp<CR>
 " leader key
 map , <Leader>
 
-" arch forum sections
-map <Leader>a :bmarks! -T arch<CR>
-
 " can't remember sites I visit
 map <Leader>w :bmarks! -T webs<CR>
+
+" arch forum sections
+map <Leader>a :bmarks! -T arch<CR>
 
 " individual subreddits
 map <Leader>r :bmarks! -T reddits<CR>
