@@ -20,4 +20,4 @@ set mark-symlinked-directories on
 set completion-query-items 100
 
 # vi editing mode
-set editing-move vi
+set editing-mode vi
