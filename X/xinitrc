@@ -9,7 +9,7 @@ monster_init() {
         dzen2 -h 18 -x 2340 -w 1500 -ta r -e -p &
 
     while [[ ! -p "$ff" ]]; do sleep 1; done
-    exec monsterwm >> "$ff"
+    exec monsterwm > "$ff"
     [[ -p "$ff" ]] && rm "$ff"
 }
 
