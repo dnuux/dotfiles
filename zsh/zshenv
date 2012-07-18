@@ -34,6 +34,7 @@ unset path_file
 # Set the list of directories that Zsh searches for programs.
 path=(
   ~/bin
+  ~/bin/toolsched
   /usr/lib/colorgcc/bin
   /usr/local/{bin,sbin}
   /usr/{bin,sbin}
