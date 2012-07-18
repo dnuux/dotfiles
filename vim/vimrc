@@ -6,10 +6,10 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 " Bundles
+Bundle 'a.vim'
 Bundle 'bkad/CamelCaseMotion'
 Bundle 'ciaranm/securemodelines'
 Bundle 'Cloudef/dotFiles', {'rtp': '.vim/bundle/cSyntaxPlus/'}
-Bundle 'derekwyatt/vim-fswitch'
 Bundle 'ervandew/supertab'
 Bundle 'garbas/vim-snipmate'
 Bundle 'gmarik/vundle'
@@ -28,7 +28,7 @@ Bundle 'sjl/gundo.vim'
 Bundle 'tomtom/tlib_vim'
 Bundle 'Townk/vim-autoclose'
 Bundle 'tpope/vim-commentary'
-Bundle "tpope/vim-eunuch"
+Bundle 'tpope/vim-eunuch'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-git'
 Bundle 'tpope/vim-repeat'
@@ -117,6 +117,7 @@ nnoremap <leader>: :Tabular /:<CR>
 
 " Ctrlp
 nnoremap § :CtrlPBuffer<CR>
+let g:ctrlp_working_path_mode = 0
 
 " EasyMotion
 let g:EasyMotion_leader_key = '<Leader>'
@@ -134,13 +135,6 @@ nnoremap <leader>a :Ack<Space>
 
 " IPython
 nnoremap <leader>i :IPython<CR>
-
-" FSwitch
-command! F  FSHere
-command! Fa FSSplitAbove
-command! Fb FSSplitBelow
-command! Fl FSSplitLeft
-command! Fr FSSplitRight
 
 " General options
 set encoding=utf-8               " set default encoding to UTF-8
