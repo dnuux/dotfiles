@@ -20,7 +20,6 @@ link() {
 dotfiles_git()      { link git/gitconfig;           }
 dotfiles_htop()     { link htop .config/htop;       }
 dotfiles_ncmpcpp()  { link ncmpcpp;                 }
-dotfiles_python()   { link python/pythonstartup;    }
 dotfiles_rtorrent() { link rtorrent/rtorrent.rc;    }
 dotfiles_subtle()   { link subtle .config/subtle;   }
 dotfiles_vifm()     { link vifm;                    }
