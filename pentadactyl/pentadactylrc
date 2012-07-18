@@ -83,6 +83,10 @@ nmap <C-t> :tabopen!<Space>
 set passkeys+=reddit.com:jk<CR>cazx
 set passkeys+=duckduckgo.com:jklv
 
+" hide statusbar when using html5 fullscreen
+autocmd Fullscreen on  set guioptions-=s
+autocmd Fullscreen off set guioptions+=s
+
 " stop da music
 autocmd PageLoad youtube.com/watch* :silent !cmus-remote -o
 
