@@ -26,7 +26,7 @@ zstyle ':omz:module:syntax-highlighting' highlighters \
 # Set the Zsh functions to load (man zshcontrib).
 # zstyle ':omz:load' zfunction 'zargs' 'zmv'
 
-# Set the plugins to load (browse plugin).
+# Set the Oh My Zsh modules to load (browse modules).
 # The order matters.
 zstyle ':omz:load' omodule \
     'environment' \

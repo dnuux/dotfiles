@@ -48,9 +48,7 @@ done
 unset path_file
 
 # Language
-if [[ -z "$LANG" ]]; then
-  eval "$(locale)"
-fi
+export LANG=en_US.UTF-8
 
 # Editors
 export EDITOR='vim'
