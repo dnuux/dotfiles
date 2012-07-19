@@ -140,43 +140,43 @@ nnoremap <leader>a :Ack<Space>
 nnoremap <leader>i :IPython<CR>
 
 " General options
-set autoindent                   " copy current indent level when starting new line
-set autoread                     " automatically read file that has been changed
-set backspace=start,indent,eol   " make backspace work like 'normal' text editors
-set completeopt=menuone,preview  " options for insert mode completion
-set cursorline                   " higlight the line the cursor is on
-set encoding=utf-8               " set default encoding to UTF-8
-set expandtab                    " use spaces instead of tab characters
-set foldmethod=indent            " fold indented blocks
-set foldnestmax=1                " maximum nesting of folds
-set gdefault                     " replace globally by default
-set hidden                       " hide buffers instead of closing them
-set hlsearch                     " highlight search terms
-set ignorecase                   " ignore case when searching
-set incsearch                    " show search matches as they are found
-set laststatus=2                 " always show statusline
-set lazyredraw                   " don't redraw when executing macros
-set linebreak                    " don't wrap on middle of words
-set modelines=2                  " number of lines to check for modelines
-set mouse=a                      " enable mouse support
-set noswapfile                   " don't make swap file
-set number                       " show line numbers
-set pastetoggle=<F2>             " toggle paste mode via F2
-set scrolloff=8                  " start scrolling when within 8 lines near top/bottom
-set shiftwidth=4                 " number of spaces to use for autoindent
-set showcmd                      " show the command being typed
-set showmatch                    " show matching braces when text indicator is over them
-set smartcase                    " case sensitive only when capital letter in expression
-set smartindent                  " indent after braces, keywords, etc
-set softtabstop=4                " defines number of spaces for when adding/remving tabs
-set splitbelow                   " horizontal splits go to below
-set splitright                   " vertical splits go to right
-set tabstop=4                    " width of a tab character in spaces
-set ttyfast                      " improve smoothness of redrawing
-set updatecount=0                " we don't use no swap files
-set wildmenu                     " enhance command line completion
-set wildmode=longest,list:full   " command prompt tab-completion
-set wrap                         " wrap lines
+set autoindent                       " copy current indent level when starting new line
+set autoread                         " automatically read file that has been changed
+set backspace=start,indent,eol       " make backspace work like 'normal' text editors
+set completeopt=menuone,preview      " options for insert mode completion
+set cursorline                       " highlight the line the cursor is on
+set encoding=utf-8                   " set default encoding to UTF-8
+set expandtab                        " use spaces instead of tab characters
+set foldmethod=indent                " fold indented blocks
+set foldnestmax=1                    " maximum nesting of folds
+set gdefault                         " replace globally by default
+set hidden                           " hide buffers instead of closing them
+set hlsearch                         " highlight search terms
+set ignorecase                       " ignore case when searching
+set incsearch                        " show search matches as they are found
+set laststatus=2                     " always show statusline
+set lazyredraw                       " don't redraw when executing macros
+set linebreak                        " don't wrap on middle of words
+set modelines=2                      " number of lines to check for modelines
+set mouse=a                          " enable mouse support
+set noswapfile                       " don't make swap file
+set number                           " show line numbers
+set pastetoggle=<F2>                 " toggle paste mode via F2
+set scrolloff=8                      " start scrolling when within 8 lines near top/bottom
+set shiftwidth=4                     " number of spaces to use for autoindent
+set showcmd                          " show the command being typed
+set showmatch                        " show matching braces when text indicator is over them
+set smartcase                        " case sensitive only when capital letter in expression
+set smartindent                      " indent after braces, keywords, etc
+set softtabstop=4                    " defines number of spaces for when adding/remving tabs
+set splitbelow                       " horizontal splits go to below
+set splitright                       " vertical splits go to right
+set tabstop=4                        " width of a tab character in spaces
+set ttyfast                          " improve smoothness of redrawing
+set updatecount=0                    " we don't use no swap files
+set wildmenu                         " enhance command line completion
+set wildmode=longest,list:full       " command prompt tab-completion
+set wrap                             " wrap lines
 
 " Backup
 set backup
