@@ -8,6 +8,7 @@ Xft.autohint:   0
 Xft.lcdfilter:  lcddefault
 
 ! -- Urxvt settings -- !
+URxvt.buffered:         true
 URxvt.background:       #1A1A1A
 URxvt.foreground:       #A9A9A9
 URxvt.cursorColor:      #5E468C
@@ -25,7 +26,7 @@ URxvt.urlLauncher:      firefox-beta-bin
 URxvt.underlineURLs:    true
 
 ! -- Fonts -- !
-URxvt.font:xft:Inconsolata-dz for Powerline:bold:pixelsize=11:antialias=true
+URxvt.font:xft:Inconsolata-g:bold:pixelsize=10:antialias=true
 
 ! -- Dzen settings -- !
 dzen2.font:       xft:DejaVu:bold:pixelsize=9:antialias=true
