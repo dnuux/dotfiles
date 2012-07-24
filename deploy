@@ -19,6 +19,7 @@ link() {
 
 dotfiles_git()      { link git/gitconfig;           }
 dotfiles_htop()     { link htop .config/htop;       }
+dotfiles_mplayer()  { link mplayer;                 }
 dotfiles_ncmpcpp()  { link ncmpcpp;                 }
 dotfiles_rtorrent() { link rtorrent/rtorrent.rc;    }
 dotfiles_subtle()   { link subtle .config/subtle;   }
