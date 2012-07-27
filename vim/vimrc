@@ -7,7 +7,6 @@ call vundle#rc()
 
 " Bundles
 Bundle 'a.vim'
-Bundle 'bkad/CamelCaseMotion'
 Bundle 'ciaranm/securemodelines'
 Bundle 'Cloudef/dotFiles', {'rtp': '.vim/bundle/cSyntaxPlus/'}
 Bundle 'coderifous/textobj-word-column.vim'
@@ -125,14 +124,6 @@ let g:ctrlp_working_path_mode = 0
 
 " EasyMotion
 let g:EasyMotion_leader_key = '<Leader>'
-
-" CamelCaseMotion
-map <silent> w <Plug>CamelCaseMotion_w
-map <silent> b <Plug>CamelCaseMotion_b
-map <silent> e <Plug>CamelCaseMotion_e
-sunmap w
-sunmap b
-sunmap e
 
 " Ack
 nnoremap <leader>a :Ack<Space>
