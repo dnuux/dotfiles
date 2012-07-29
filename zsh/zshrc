@@ -15,9 +15,9 @@ zstyle ':omz:module:terminal' auto-title 'yes'
 
 # Enable highlighters
 zstyle ':omz:module:syntax-highlighting' highlighters \
-    'main' \
+    'main'     \
     'brackets' \
-    'pattern' \
+    'pattern'  \
     'cursor'
 
 # Set the Zsh modules to load (man zshmodules).
@@ -28,23 +28,23 @@ zstyle ':omz:module:syntax-highlighting' highlighters \
 
 # Set the Oh My Zsh modules to load (browse modules).
 # The order matters.
-zstyle ':omz:load' omodule \
-    'environment' \
-    'terminal' \
-    'editor' \
-    'history' \
-    'directory' \
-    'spectrum' \
-    'utility' \
-    'completion' \
-    'abbrev' \
-    'syntax-highlighting' \
+zstyle ':omz:load' omodule     \
+    'environment'              \
+    'terminal'                 \
+    'editor'                   \
+    'history'                  \
+    'directory'                \
+    'spectrum'                 \
+    'utility'                  \
+    'completion'               \
+    'abbrev'                   \
+    'syntax-highlighting'      \
     'history-substring-search' \
-    'prompt' \
-    'archive' \
-    'fasd' \
-    'git' \
-    'pacman' \
+    'prompt'                   \
+    'archive'                  \
+    'fasd'                     \
+    'git'                      \
+    'pacman'                   \
     'ssh-agent'
 
 # Set the prompt theme to load.
