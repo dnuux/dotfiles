@@ -5,8 +5,10 @@ group user
 colorscheme neverland
 
 " general options
-set defsearch=g
+set activate=help,homepage,quickmark,tabopen
+set defsearch=d
 set downloadsort='-time'
+set editor='urxvt -e vim -X'
 set findcase='smart'
 set findflags='r'
 set guioptions=s
@@ -16,7 +18,6 @@ set history=10
 set hlfind
 set popups=tab
 set showtabline=never
-set suggestengines=g
 set titlestring="Mozzarella Firefux"
 set urlseparator=',,'
 set wildmode=full
