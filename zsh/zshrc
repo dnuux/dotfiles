@@ -39,7 +39,6 @@ zstyle ':omz:load' omodule     \
     'archive'                  \
     'fasd'                     \
     'git'                      \
-    'pacman'                   \
     'ssh-agent'
 
 # Set the prompt theme to load.
