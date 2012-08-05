@@ -5,10 +5,13 @@
 #   Sorin Ionescu <sorin.ionescu@gmail.com>
 #
 
-# Set the path to Oh My Zsh.
-export OMZ="$HOME/.oh-my-zsh"
+# Set the path to prezto.
+export OMZ="$HOME/.prezto"
 
+#
 # Path
+#
+
 typeset -gU path
 
 path=(
@@ -18,14 +21,33 @@ path=(
   $path
 )
 
+#
 # Language
+#
+
 export LANG=en_US.UTF-8
 
+#
 # Editors
+#
+
 export EDITOR='vim'
 export VISUAL='vim'
 
+#
+# Browser
+#
+
+if [[ "$OSTYPE" == darwin* ]]; then
+  export BROWSER='open'
+else
+  export BROWSER='firefox-beta-bin'
+fi
+
+#
 # Pager
+#
+
 if (( $+commands[vimpager] )); then
   export PAGER='vimpager' && alias less=$PAGER
 else
@@ -40,13 +62,6 @@ else
   if (( $+commands[lesspipe.sh] )); then
     export LESSOPEN='| /usr/bin/env lesspipe.sh %s 2>&-'
   fi
-fi
-
-# Browser (default)
-if [[ "$OSTYPE" == darwin* ]]; then
-  export BROWSER='open'
-else
-  export BROWSER='firefox-beta-bin'
 fi
 
 # Faster escape to vi mode
