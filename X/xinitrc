@@ -32,7 +32,7 @@ xsetroot -cursor_name left_ptr &
 unclutter -idle 2 -noevents &
 
 # programs
-(firefox-beta-bin &> /dev/null) &
+(firefox &> /dev/null) &
 (sleep 10 && urxvtc -sl 0 -name cmus -e cmus) &
 (sleep 15 && urxvtc -sl 0 -name htop -e htop) &
 (sleep 20 && urxvtc -sl 0 -name vifm -e vifm) &

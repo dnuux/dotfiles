@@ -50,10 +50,6 @@ nmap Q @@
 nmap U :redo<CR>
 nnoremap <Space> za
 
-" For code golf
-command! Wc w !wc -c
-command! Ww w !wc -w
-
 " Use sane regexes
 nnoremap / /\v
 vnoremap / /\v
