@@ -14,8 +14,7 @@ zstyle ':omz:*:*' color 'yes'
 zstyle ':omz:module:syntax-highlighting' highlighters \
     'main'     \
     'brackets' \
-    'pattern'  \
-    'cursor'
+    'pattern'
 
 # Set the Zsh modules to load (man zshmodules).
 # zstyle ':omz:load' zmodule 'zprof'
