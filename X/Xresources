@@ -14,6 +14,7 @@ URxvt.foreground:       #A9A9A9
 URxvt.cursorColor:      #5E468C
 URxvt.transparent:      false
 URxvt.internalBorder:   10
+URxvt.saveLines:        8192
 URxvt*scrollBar_right:  false
 URxvt*scrollBar:        false
 URxvt*borderLess:       false
