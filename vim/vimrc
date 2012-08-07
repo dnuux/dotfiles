@@ -65,9 +65,6 @@ nnoremap k gk
 " Disable search highlighting
 nnoremap <silent><leader><Space> :nohls<CR>
 
-" Pretty comments
-nnoremap <leader>l yyPVr=
-
 " Easier pane switching
 nnoremap <leader>v <C-w>v<C-w>l
 nnoremap <C-h> <C-w>h
@@ -85,6 +82,10 @@ nnoremap <C-t> :b#<CR>
 " Reselect visual block after indent/outdent
 vnoremap < <gv
 vnoremap > >gv
+
+" Quickly jump to the next or previous error
+nnoremap <C-n> :cn<CR>
+nnoremap <C-m> :cp<CR>
 
 " Strip all trailing whitespace from file
 nnoremap <leader>tr :%s/\s\+$//<CR>:let @/=''<CR>
@@ -146,6 +147,7 @@ set lazyredraw                       " don't redraw when executing macros
 set linebreak                        " don't wrap on middle of words
 set modelines=2                      " number of lines to check for modelines
 set mouse=a                          " enable mouse support
+set noesckeys                        " get rid of the delay when hitting esc
 set noswapfile                       " don't make swap file
 set number                           " show line numbers
 set pastetoggle=<F2>                 " toggle paste mode via F2
@@ -159,6 +161,7 @@ set softtabstop=4                    " defines number of spaces for when adding/
 set splitbelow                       " horizontal splits go to below
 set splitright                       " vertical splits go to right
 set tabstop=4                        " width of a tab character in spaces
+set timeoutlen=500                   " don't wait so long for the next keypress
 set ttyfast                          " improve smoothness of redrawing
 set updatecount=0                    " we don't use no swap files
 set wildmenu                         " enhance command line completion
