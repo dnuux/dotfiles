@@ -33,10 +33,14 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
+Bundle 'w0ng/vim-hybrid'
+
+" Use .Xresources for hybrid
+let g:hybrid_use_Xresources = 1
 
 " General options
 syntax on                   " turn on syntax highlighting
-colorscheme cottonmouse     " colorscheme
+colorscheme hybrid          " colorscheme
 let mapleader = ","         " map leader to ,
 filetype plugin indent on   " turn on ftplugin and indent
 
@@ -86,6 +90,9 @@ vnoremap > >gv
 " Quickly jump to the next or previous error
 nnoremap <C-n> :cn<CR>
 nnoremap <C-m> :cp<CR>
+
+" Split line at cursor position
+nnoremap <C-j> i<CR><Esc>k$
 
 " Strip all trailing whitespace from file
 nnoremap <leader>tr :%s/\s\+$//<CR>:let @/=''<CR>
@@ -164,6 +171,7 @@ set tabstop=4                        " width of a tab character in spaces
 set timeoutlen=500                   " don't wait so long for the next keypress
 set ttyfast                          " improve smoothness of redrawing
 set updatecount=0                    " we don't use no swap files
+set virtualedit=block                " allow moving outside text bounds in visual block mode
 set wildmenu                         " enhance command line completion
 set wildmode=longest,list:full       " command prompt tab-completion
 set wrap                             " wrap lines
