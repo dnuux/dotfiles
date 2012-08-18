@@ -7,6 +7,7 @@ call vundle#rc()
 
 " Bundles
 Bundle 'a.vim'
+Bundle 'argtextobj.vim'
 Bundle 'ciaranm/securemodelines'
 Bundle 'Cloudef/dotFiles', {'rtp': '.vim/bundle/cSyntaxPlus/'}
 Bundle 'coderifous/textobj-word-column.vim'
@@ -91,9 +92,6 @@ vnoremap > >gv
 nnoremap <C-n> :cn<CR>
 nnoremap <C-m> :cp<CR>
 
-" Split line at cursor position
-nnoremap <C-j> i<CR><Esc>k$
-
 " Strip all trailing whitespace from file
 nnoremap <leader>tr :%s/\s\+$//<CR>:let @/=''<CR>
 
@@ -134,6 +132,9 @@ nnoremap <leader>a :Ack<Space>
 " IPython
 nnoremap <leader>i :IPython<CR>
 
+" Secure modelines
+let g:secure_modelines_modelines=2
+
 " General options
 set autoindent                       " copy current indent level when starting new line
 set autoread                         " automatically read file that has been changed
@@ -152,7 +153,6 @@ set incsearch                        " show search matches as they are found
 set laststatus=2                     " always show statusline
 set lazyredraw                       " don't redraw when executing macros
 set linebreak                        " don't wrap on middle of words
-set modelines=2                      " number of lines to check for modelines
 set mouse=a                          " enable mouse support
 set noesckeys                        " get rid of the delay when hitting esc
 set noswapfile                       " don't make swap file
@@ -163,12 +163,11 @@ set shiftwidth=4                     " number of spaces to use for autoindent
 set showcmd                          " show the command being typed
 set showmatch                        " show matching braces when text indicator is over them
 set smartcase                        " case sensitive only when capital letter in expression
-set smartindent                      " indent after braces, keywords, etc
 set softtabstop=4                    " defines number of spaces for when adding/remving tabs
 set splitbelow                       " horizontal splits go to below
 set splitright                       " vertical splits go to right
 set tabstop=4                        " width of a tab character in spaces
-set timeoutlen=500                   " don't wait so long for the next keypress
+set timeoutlen=200                   " don't wait so long for the next keypress
 set ttyfast                          " improve smoothness of redrawing
 set updatecount=0                    " we don't use no swap files
 set virtualedit=block                " allow moving outside text bounds in visual block mode
@@ -238,7 +237,6 @@ function! AppendModeline()
   let l:modeline = printf(" vim: set sw=%d ts=%d sts=%d :",
           \ &shiftwidth, &tabstop, &softtabstop)
   let l:modeline = substitute(&commentstring, "%s", l:modeline, "")
-  call append(line("$"), "")
   call append(line("$"), l:modeline)
 endfunction
 nnoremap <leader>ml :call AppendModeline()<CR>
