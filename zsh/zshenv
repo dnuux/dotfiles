@@ -43,7 +43,9 @@ fi
 #
 
 if (( $+commands[vimpager] )); then
-  export PAGER='vimpager' && alias less=$PAGER
+  export PAGER='vimpager'
+  alias less=$PAGER
+  alias zless=$PAGER
 else
   export PAGER='less'
 
