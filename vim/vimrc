@@ -26,6 +26,7 @@ Bundle 'nvie/vim-flake8'
 Bundle 'powerman/vim-plugin-viewdoc'
 Bundle 'scrooloose/nerdtree'
 Bundle 'sjl/gundo.vim'
+Bundle 'spolu/dwm.vim'
 Bundle 'tomtom/tlib_vim'
 Bundle 'Townk/vim-autoclose'
 Bundle 'tpope/vim-commentary'
@@ -69,13 +70,6 @@ nnoremap k gk
 
 " Disable search highlighting
 nnoremap <silent><leader><Space> :nohls<CR>
-
-" Easier pane switching
-nnoremap <leader>v <C-w>v<C-w>l
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
 
 " Easier buffer switching
 nnoremap <left> :bp<CR>
