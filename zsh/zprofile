@@ -2,6 +2,15 @@
 # Executes commands at login pre-zshrc.
 #
 
+typeset -gU path
+
+path=(
+  ~/bin
+  ~/bin/toolsched/bin
+  /usr/lib/colorgcc/bin
+  $path
+)
+
 if [[ -z $DISPLAY && $(tty) = /dev/tty1 ]]; then
   exec startx
 fi

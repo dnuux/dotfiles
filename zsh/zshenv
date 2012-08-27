@@ -9,19 +9,6 @@
 export OMZ="$HOME/.prezto"
 
 #
-# Path
-#
-
-typeset -gU path
-
-path=(
-  ~/bin
-  ~/bin/toolsched
-  /usr/lib/colorgcc/bin
-  $path
-)
-
-#
 # Editors
 #
 
