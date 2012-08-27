@@ -163,6 +163,7 @@ set splitright                       " vertical splits go to right
 set tabstop=4                        " width of a tab character in spaces
 set timeoutlen=200                   " don't wait so long for the next keypress
 set ttyfast                          " improve smoothness of redrawing
+set ttymouse=xterm2                  " resize buffers with mouse
 set updatecount=0                    " we don't use no swap files
 set virtualedit=block                " allow moving outside text bounds in visual block mode
 set wildmenu                         " enhance command line completion
@@ -199,9 +200,6 @@ autocmd BufReadPost *
   \ if line("'\"") > 0 && line ("'\"") <= line("$") |
   \   exe "normal g'\"" |
   \ endif
-
-" Resize splits with the window
-autocmd VimResized * exe "normal! \<C-w>="
 
 " Quickly toggle relativenumber
 if exists("&relativenumber")
