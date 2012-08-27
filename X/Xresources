@@ -20,11 +20,13 @@ URxvt*scrollBar:        false
 URxvt*borderLess:       false
 
 ! -- URxvt Extensions --!
-URxvt.perl-ext-common:  default,url-select,keyboard-select,confirm-paste
-URxvt.keysym.Delete:    perl:url-select:select_next
-URxvt.keysym.M-Escape:  perl:keyboard-select:activate
-URxvt.urlLauncher:      firefox-beta-bin
-URxvt.underlineURLs:    true
+URxvt.perl-ext-common:       default,url-select,keyboard-select,confirm-paste
+URxvt.keysym.M-Escape:       perl:keyboard-select:activate
+URxvt.keysym.M-s:            perl:keyboard-select:search
+URxvt.keysym.Delete:         perl:url-select:select_next
+URxvt.url-select.launcher:   firefox
+URxvt.url-select.underline:  true
+URxvt.url-select.button:     1
 
 ! -- Fonts -- !
 URxvt.font:xft:Inconsolata-g:bold:pixelsize=10:antialias=true
