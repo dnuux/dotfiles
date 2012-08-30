@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/dash
 
 monster_init() {
     local ff="/tmp/monsterwm.fifo"
@@ -8,9 +8,9 @@ monster_init() {
     monsterstatus | \
         dzen2 -h 18 -x 2340 -w 1500 -ta r -e -p &
 
-    while [[ ! -p "$ff" ]]; do sleep 1; done
+    while [ ! -p "$ff" ]; do sleep 1; done
     exec monsterwm > "$ff"
-    [[ -p "$ff" ]] && rm "$ff"
+    [ -p "$ff" ] && rm "$ff"
 }
 
 # keyboard
@@ -32,7 +32,7 @@ xsetroot -cursor_name left_ptr &
 unclutter -idle 2 -noevents &
 
 # programs
-(firefox &> /dev/null) &
+(firefox > /dev/null 2>&1) &
 (sleep 10 && urxvtc -sl 0 -name cmus -e cmus) &
 (sleep 15 && urxvtc -sl 0 -name htop -e htop) &
 (sleep 20 && urxvtc -sl 0 -name vifm -e vifm) &
