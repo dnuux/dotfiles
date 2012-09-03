@@ -24,7 +24,7 @@ URxvt.perl-ext-common:       default,url-select,keyboard-select,confirm-paste
 URxvt.keysym.M-Escape:       perl:keyboard-select:activate
 URxvt.keysym.M-s:            perl:keyboard-select:search
 URxvt.keysym.Delete:         perl:url-select:select_next
-URxvt.url-select.launcher:   firefox
+URxvt.url-select.launcher:   firefox-beta-bin
 URxvt.url-select.underline:  true
 URxvt.url-select.button:     1
 
