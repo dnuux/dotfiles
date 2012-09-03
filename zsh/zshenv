@@ -9,13 +9,6 @@
 export OMZ="$HOME/.prezto"
 
 #
-# Editors
-#
-
-export EDITOR='vim'
-export VISUAL='vim'
-
-#
 # Browser
 #
 
@@ -24,6 +17,13 @@ if [[ "$OSTYPE" == darwin* ]]; then
 else
   export BROWSER='firefox-beta-bin'
 fi
+
+#
+# Editors
+#
+
+export EDITOR='vim'
+export VISUAL='vim'
 
 #
 # Pager

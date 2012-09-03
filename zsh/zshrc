@@ -32,13 +32,13 @@ zstyle ':omz:load' omodule     \
     'utility'                  \
     'completion'               \
     'abbrev'                   \
-    'syntax-highlighting'      \
-    'history-substring-search' \
-    'prompt'                   \
     'archive'                  \
     'fasd'                     \
     'git'                      \
-    'ssh-agent'
+    'ssh-agent'                \
+    'syntax-highlighting'      \
+    'history-substring-search' \
+    'prompt'
 
 # Set the prompt theme to load.
 zstyle ':omz:module:prompt' theme 'soliah'
