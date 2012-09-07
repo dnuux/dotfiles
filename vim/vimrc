@@ -5,7 +5,10 @@ set nocompatible
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
+"
 " Bundles
+"
+
 Bundle 'a.vim'
 Bundle 'argtextobj.vim'
 Bundle 'ciaranm/securemodelines'
@@ -37,99 +40,16 @@ Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'w0ng/vim-hybrid'
 
-" Use .Xresources for hybrid
-let g:hybrid_use_Xresources = 1
+"
+" Options
+"
 
-" General options
-syntax on                   " turn on syntax highlighting
-colorscheme hybrid          " colorscheme
-let mapleader = ","         " map leader to ,
-filetype plugin indent on   " turn on ftplugin and indent
+syntax on                            " turn on syntax highlighting
+filetype plugin indent on            " turn on ftplugin and indent
+let mapleader = ","                  " map leader to ,
+let g:hybrid_use_Xresources = 1      " use .Xresources colors for hybrid
+colorscheme hybrid                   " colorscheme
 
-" Basic mappings
-command! W w
-command! Q q
-nmap H ^
-nmap L $
-nmap Y y$
-nmap Q @@
-nmap U :redo<CR>
-nnoremap <Space> za
-
-" Use sane regexes
-nnoremap / /\v
-vnoremap / /\v
-
-" Jump to matching braces easily
-nnoremap <Tab> %
-vnoremap <Tab> %
-
-" Easier moving with wrapping
-nnoremap j gj
-nnoremap k gk
-
-" Disable search highlighting
-nnoremap <silent><leader><Space> :nohls<CR>
-
-" Easier buffer switching
-nnoremap <left> :bp<CR>
-nnoremap <right> :bn<CR>
-
-" Switch between last two buffers
-nnoremap <C-t> :b#<CR>
-
-" Reselect visual block after indent/outdent
-vnoremap < <gv
-vnoremap > >gv
-
-" Quickly jump to the next or previous error
-nnoremap <C-n> :cn<CR>
-nnoremap <C-m> :cp<CR>
-
-" Strip all trailing whitespace from file
-nnoremap <leader>tr :%s/\s\+$//<CR>:let @/=''<CR>
-
-" Replace single line python imports with multiline
-nnoremap <leader>im :s/,/\rimport/<CR>
-
-" Reselect pasted text
-nnoremap <leader>p V`]`
-
-" Swap words
-nnoremap <leader>h "_yiw?\v\w+\_W+%#<CR>:s/\v(%#\w+)(\_W+)(\w+)/\3\2\1/<CR><C-o><C-l>:noh<cr>
-nnoremap <leader>l "_yiw:s/\v(%#\w+)(\_W+)(\w+)/\3\2\1/<CR><C-o>/\v\w+\_W+<CR><C-l>:noh<cr>
-
-" Gundo
-nnoremap <F6> :GundoToggle<CR>
-
-" NERDTree
-let g:NERDTreeChDirMode = 2
-let g:NERDTreeIgnore    = ['\~$', '\.swp$', '\.o$']
-let g:NERDTreeSortOrder = ['^__\.py$', '\/$', '*']
-let g:NERDTreeMinimalUI = 1
-nnoremap <F12> :NERDTreeToggle<CR>
-
-" Tabular
-nnoremap <leader>= :Tabular /=<CR>
-nnoremap <leader>: :Tabular /:<CR>
-
-" Ctrlp
-nnoremap § :CtrlPBuffer<CR>
-let g:ctrlp_working_path_mode = 0
-
-" EasyMotion
-let g:EasyMotion_leader_key = '<Leader>'
-
-" Ack
-nnoremap <leader>a :Ack<Space>
-
-" IPython
-nnoremap <leader>i :IPython<CR>
-
-" Secure modelines
-let g:secure_modelines_modelines=2
-
-" General options
 set autoindent                       " copy current indent level when starting new line
 set autoread                         " automatically read file that has been changed
 set backspace=start,indent,eol       " make backspace work like 'normal' text editors
@@ -161,7 +81,7 @@ set softtabstop=4                    " defines number of spaces for when adding/
 set splitbelow                       " horizontal splits go to below
 set splitright                       " vertical splits go to right
 set tabstop=4                        " width of a tab character in spaces
-set timeoutlen=200                   " don't wait so long for the next keypress
+set timeoutlen=300                   " don't wait so long for the next keypress
 set ttyfast                          " improve smoothness of redrawing
 set ttymouse=xterm2                  " resize buffers with mouse
 set updatecount=0                    " we don't use no swap files
@@ -183,23 +103,139 @@ set list
 " Ignore unndeeded files
 set wildignore+=*.bak,*.swp,*.git,*.pyc,*.pyo,*.o
 
-" Less indentation for some filetypes
-autocmd FileType vim,sh,zsh,PKGBUILD set ts=2 sts=2 sw=2
+"
+" Mappings
+"
 
-" Compile and run
-autocmd FileType python map <F9> :w \| :!python2 "%"<CR>
-autocmd FileType cpp    map <F9> :w \| :call RunMake("g++")<CR>
-autocmd FileType c      map <F9> :w \| :call RunMake("gcc")<CR>
-autocmd FileType sh     map <F9> :w \| :!./"%"<CR>
+command! W w
+command! Q q
+nmap H ^
+nmap L $
+nmap Y y$
+nmap Q @@
+nmap U :redo<CR>
+nnoremap <Space> za
 
-" Spice up C syntax higlighting
-autocmd FileType c,cpp :call CSyntaxPlus()
+" Use sane regexes
+nnoremap / /\v
+vnoremap / /\v
 
-" Return cursor to the last line you were editing
-autocmd BufReadPost *
-  \ if line("'\"") > 0 && line ("'\"") <= line("$") |
-  \   exe "normal g'\"" |
-  \ endif
+" Jump to matching braces easily
+nnoremap <Tab> %
+vnoremap <Tab> %
+
+" Easier moving with wrapping
+nnoremap j gj
+nnoremap k gk
+
+" Disable search highlighting
+nnoremap <silent><leader><Space> :nohls<CR>
+
+" Switch between last two buffers
+nnoremap <C-t> :b#<CR>
+
+" Reselect visual block after indent/outdent
+vnoremap < <gv
+vnoremap > >gv
+
+" Strip all trailing whitespace from file
+nnoremap <leader>tr :%s/\s\+$//<CR>:let @/=''<CR>
+
+" Replace single line python imports with multiline
+nnoremap <leader>im :s/,/\rimport/<CR>
+
+" Reselect pasted text
+nnoremap <leader>p V`]`
+
+"
+" Plugin settings
+"
+
+" Ack
+nnoremap <leader>a :Ack<Space>
+
+" Ctrlp
+nnoremap § :CtrlPBuffer<CR>
+let g:ctrlp_working_path_mode = 0
+let g:ctrlp_user_command = "find %s -type f | egrep -v '/\.git/'"
+
+" EasyMotion
+let g:EasyMotion_leader_key = '<Leader>'
+
+" Fugitive
+nnoremap <leader>gs :Gstatus<CR>
+nnoremap <leader>gg :Ggrep<Space>
+nnoremap <leader>gd :Gdiff<CR>
+nnoremap <leader>gb :Gblame<CR>
+
+" Gundo
+nnoremap <F6> :GundoToggle<CR>
+
+" IPython
+nnoremap <leader>i :IPython<CR>
+
+" NERDTree
+let g:NERDTreeChDirMode = 2
+let g:NERDTreeIgnore    = ['\~$', '\.swp$', '\.o$']
+let g:NERDTreeSortOrder = ['^__\.py$', '\/$', '*']
+let g:NERDTreeMinimalUI = 1
+nnoremap <F12> :NERDTreeToggle<CR>
+
+" Tabular
+nnoremap <leader>= :Tabular /=<CR>
+nnoremap <leader>: :Tabular /:<CR>
+nnoremap <leader>\ :Tabular /\<CR>
+
+" Secure modelines
+let g:secure_modelines_modelines=2
+
+"
+" Auto commands
+"
+
+if has("autocmd")
+
+  " Less indentation for some filetypes
+  autocmd FileType vim,sh,zsh,PKGBUILD set ts=2 sts=2 sw=2
+
+  " Compile and run
+  autocmd FileType python map <F9> :w \| :!python2 "%"<CR>
+  autocmd FileType cpp    map <F9> :w \| :call RunMake("g++")<CR>
+  autocmd FileType c      map <F9> :w \| :call RunMake("gcc")<CR>
+  autocmd FileType sh     map <F9> :w \| :!./"%"<CR>
+
+  " Spice up C syntax higlighting
+  autocmd FileType c,cpp :call CSyntaxPlus()
+
+  " Return cursor to the last line you were editing
+  autocmd BufReadPost *
+    \ if line("'\"") > 0 && line ("'\"") <= line("$") |
+    \   exe "normal g'\"" |
+    \ endif
+
+endif
+
+"
+" Functions
+"
+
+" Append modeline to file
+function! AppendModeline()
+  let l:modeline = printf(" vim: set sw=%d ts=%d sts=%d :",
+          \ &shiftwidth, &tabstop, &softtabstop)
+  let l:modeline = substitute(&commentstring, "%s", l:modeline, "")
+  call append(line("$"), l:modeline)
+endfunction
+nnoremap <leader>ml :call AppendModeline()<CR>
+
+" Run make if Makefile exists, otherwise compile and run
+function! RunMake(compiler)
+  if filereadable("Makefile")
+    make
+  else
+    execute '!' . a:compiler . ' "%" -Wall -O2 -march=native && ./a.out'
+  endif
+endfunction
 
 " Quickly toggle relativenumber
 if exists("&relativenumber")
@@ -215,24 +251,6 @@ if exists("&relativenumber")
   nnoremap <silent> <leader>m :<C-U>call <SID>ToggleRelativeNumber()<CR>
 endif
 
-" Run make if Makefile exists, otherwise compile and run
-function! RunMake(compiler)
-  if filereadable("Makefile")
-    make
-  else
-    execute '!' . a:compiler . ' "%" -Wall -O2 -march=native && ./a.out'
-  endif
-endfunction
-
-" Append modeline to file
-function! AppendModeline()
-  let l:modeline = printf(" vim: set sw=%d ts=%d sts=%d :",
-          \ &shiftwidth, &tabstop, &softtabstop)
-  let l:modeline = substitute(&commentstring, "%s", l:modeline, "")
-  call append(line("$"), l:modeline)
-endfunction
-nnoremap <leader>ml :call AppendModeline()<CR>
-
 " Quickly jump to directories with fasd
 command! -nargs=* Z :call Z(<f-args>)
 function! Z(...)
@@ -246,3 +264,4 @@ function! Z(...)
     exec 'cd ' . path
   endif
 endfunction
+
