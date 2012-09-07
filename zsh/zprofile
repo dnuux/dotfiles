@@ -2,6 +2,10 @@
 # Executes commands at login pre-zshrc.
 #
 
+#
+# Path
+#
+
 typeset -gU path
 
 path=(
@@ -11,7 +15,9 @@ path=(
   $path
 )
 
-if [[ -z $DISPLAY && $(tty) = /dev/tty1 ]]; then
-  exec startx
-fi
+# Start X at login
+
+vt=$(fgconsole 2>/dev/null)
+(( vt == 1 )) && exec startx -- vt$vt
+unset vt
 
