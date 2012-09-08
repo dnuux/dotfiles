@@ -1,8 +1,8 @@
 function NoscriptPentadactyl() {
   var popup = (
-    noscriptOverlay.stickyUI &&
-    noscriptOverlay.ns.getPref("stickyUI.onKeyboard") &&
-    (popup = noscriptOverlay.stickyUI)
+    window.noscriptOverlay.stickyUI &&
+    window.noscriptOverlay.ns.getPref("stickyUI.onKeyboard") &&
+    (popup = window.noscriptOverlay.stickyUI)
   ) || document.getElementById("noscript-status-popup");
   popup.addEventListener('popupshown', popupshown, true);
   popup.addEventListener('popuphidden', popuphidden, true);
@@ -54,21 +54,21 @@ function NoscriptPentadactyl() {
 
   return {
     info: function(){
-      dactyl.echo(util.objectToString(noscriptOverlay.getSites(), true));
+      dactyl.echo(util.objectToString(window.noscriptOverlay.getSites(), true));
     },
 
     popup: function(){
-      noscriptOverlay.showUI();
+      window.noscriptOverlay.showUI();
     },
 
     toggletemp: function(){
-      noscriptOverlay.toggleCurrentPage(3);
+      window.noscriptOverlay.toggleCurrentPage(3);
     },
 
     toggleperm: function(){
-      const ns = noscriptOverlay.ns;
+      const ns = window.noscriptOverlay.ns;
       const url = ns.getQuickSite(content.document.documentURI, /*level*/ 3);
-      noscriptOverlay.safeAllow(url, !ns.isJSEnabled(url), false);
+      window.noscriptOverlay.safeAllow(url, !ns.isJSEnabled(url), false);
     },
 
     _execute: function(args){
