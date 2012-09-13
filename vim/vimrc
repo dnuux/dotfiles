@@ -157,7 +157,7 @@ nnoremap <leader>a :Ack<Space>
 " Ctrlp
 nnoremap § :CtrlPBuffer<CR>
 let g:ctrlp_working_path_mode = 0
-let g:ctrlp_user_command = "find %s -type f | egrep -v '/\.git/'"
+let g:ctrlp_user_command = "find %s -type f | grep -v /.git/"
 
 " EasyMotion
 let g:EasyMotion_leader_key = '<Leader>'
@@ -190,7 +190,7 @@ nnoremap <leader>\ :Tabular /\<CR>
 let g:secure_modelines_modelines=2
 
 "
-" Auto commands
+" Autocommands
 "
 
 if has("autocmd")
