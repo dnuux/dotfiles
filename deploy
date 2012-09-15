@@ -52,12 +52,13 @@ dotfiles_vim() {
 dotfiles_zsh() {
   link zsh/zlogin
   link zsh/zlogout
+  link zsh/zpreztorc
   link zsh/zprofile
   link zsh/zshenv
   link zsh/zshrc
 
   git submodule update --init --recursive
-  link zsh/oh-my-zsh
+  link zsh/prezto
 }
 
 usage() {
