@@ -1,16 +1,16 @@
 #!/bin/dash
 
 monster_init() {
-    local ff="/tmp/monsterwm.fifo"
+  local ff="/tmp/monsterwm.fifo"
 
-    monsterpager "$ff" | \
-        dzen2 -h 18 -x 1920 -w 420 -ta l -e -p &
-    monsterstatus | \
-        dzen2 -h 18 -x 2340 -w 1500 -ta r -e -p &
+  monsterpager "$ff" | \
+    dzen2 -h 18 -x 1920 -w 420 -ta l -e -p &
+  monsterstatus | \
+    dzen2 -h 18 -x 2340 -w 1500 -ta r -e -p &
 
-    while [ ! -p "$ff" ]; do sleep 1; done
-    exec monsterwm > "$ff"
-    [ -p "$ff" ] && rm "$ff"
+  while [ ! -p "$ff" ]; do sleep 1; done
+  exec monsterwm > "$ff"
+  [ -p "$ff" ] && rm "$ff"
 }
 
 # keyboard
