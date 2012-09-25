@@ -2,9 +2,6 @@
 vo=vdpau
 ao=alsa
 
-# Cache size
-cache=8192
-
 # Aspect ratio
 monitoraspect=16:10
 
