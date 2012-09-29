@@ -34,6 +34,7 @@ zstyle ':prezto:load' pmodule \
   'archive'                   \
   'fasd'                      \
   'git'                       \
+  'rsync'                     \
   'ssh-agent'                 \
   'syntax-highlighting'       \
   'history-substring-search'  \
