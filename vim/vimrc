@@ -1,13 +1,9 @@
-" use Vim settings rather than vi, needs to be first
-set nocompatible
-
-" Vundle
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-
 "
 " Bundles
 "
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
 
 Bundle 'a.vim'
 Bundle 'argtextobj.vim'
