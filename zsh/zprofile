@@ -17,7 +17,5 @@ path=(
 
 # Start X at login
 
-vt=$(fgconsole 2>/dev/null)
-(( vt == 1 )) && exec startx -- vt$vt
-unset vt
+[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx
 
