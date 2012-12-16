@@ -158,6 +158,9 @@ let g:ctrlp_user_command = "find %s -type f | grep -v /.git/"
 " EasyMotion
 let g:EasyMotion_leader_key = '<Leader>'
 
+" Flake8
+let g:flake8_cmd = 'flake8-python2'
+
 " Fugitive
 nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>gg :Ggrep<Space>
