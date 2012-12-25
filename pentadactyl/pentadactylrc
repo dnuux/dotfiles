@@ -23,8 +23,8 @@ set urlseparator=',,'
 set wildmode=full
 
 " buftabs
-set buftabs-maxlength=20
-set buftabs-completer=~
+" set buftabs-maxlength=20
+" set buftabs-completer=~
 
 " noscript
 nmap -builtin a :noscript popup<CR>
@@ -89,7 +89,7 @@ autocmd Fullscreen on  set guioptions-=s
 autocmd Fullscreen off set guioptions+=s
 
 " stop da music
-autocmd PageLoad youtube.com/watch* :silent !cmus-remote -o
+autocmd PageLoad youtube.com/watch* :silent !mpc pause
 
 " play youtube video in mplayer
 nmap <Leader>y :execute "silent !~/bin/youtube-play '" + buffer.URL + "'"<CR>
