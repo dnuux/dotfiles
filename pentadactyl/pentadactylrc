@@ -89,7 +89,7 @@ autocmd Fullscreen on  set guioptions-=s
 autocmd Fullscreen off set guioptions+=s
 
 " stop da music
-autocmd PageLoad youtube.com/watch* :silent !mpc pause
+autocmd PageLoad youtube.com/watch* :silent !mpc pause -q
 
 " play youtube video in mplayer
 nmap <Leader>y :execute "silent !~/bin/youtube-play '" + buffer.URL + "'"<CR>
