@@ -97,8 +97,4 @@ nmap <Leader>y :execute "silent !~/bin/youtube-play '" + buffer.URL + "'"<CR>
 " view native size of image without clicking it
 nmap <Leader>z :js window.content.document.toggleImageSize();<CR>
 
-" manage a to-read list of websites in a stack
-nmap <Leader>sa :execute "silent !~/bin/stack push " + buffer.URL<CR>
-nmap <Leader>sp :execute "silent !~/bin/stack pop"<CR>
-
 " vim: set ft=vim ts=2 sw=2
