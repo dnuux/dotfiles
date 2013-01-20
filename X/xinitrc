@@ -33,7 +33,6 @@ unclutter -idle 10 -jitter 5 &
 
 # programs
 (firefox-beta-bin > /dev/null 2>&1) &
-(sleep 10 && urxvtc -sl 0 -name cmus -e cmus) &
 (sleep 15 && urxvtc -sl 0 -name htop -e htop) &
 (sleep 20 && urxvtc -sl 0 -name vifm -e vifm) &
 
