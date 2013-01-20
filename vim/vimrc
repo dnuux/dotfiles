@@ -15,16 +15,13 @@ Bundle 'garbas/vim-snipmate'
 Bundle 'gmarik/vundle'
 Bundle 'godlygeek/tabular'
 Bundle 'honza/snipmate-snippets'
-Bundle 'ivanov/vim-ipython'
 Bundle 'kien/ctrlp.vim'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'MarcWeber/vim-addon-mw-utils'
-Bundle 'mileszs/ack.vim'
 Bundle 'nvie/vim-flake8'
 Bundle 'powerman/vim-plugin-viewdoc'
 Bundle 'scrooloose/nerdtree'
-Bundle 'sjl/gundo.vim'
 Bundle 'spolu/dwm.vim'
 Bundle 'tomtom/tlib_vim'
 Bundle 'Townk/vim-autoclose'
@@ -147,9 +144,6 @@ nnoremap <leader>p V`]`
 " Plugin settings
 "
 
-" Ack
-nnoremap <leader>a :Ack<Space>
-
 " Ctrlp
 nnoremap § :CtrlPBuffer<CR>
 let g:ctrlp_working_path_mode = 0
@@ -166,12 +160,6 @@ nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>gg :Ggrep<Space>
 nnoremap <leader>gd :Gdiff<CR>
 nnoremap <leader>gb :Gblame<CR>
-
-" Gundo
-nnoremap <F6> :GundoToggle<CR>
-
-" IPython
-nnoremap <leader>i :IPython<CR>
 
 " NERDTree
 let g:NERDTreeChDirMode = 2
