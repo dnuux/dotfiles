@@ -23,8 +23,7 @@ set urlseparator=',,'
 set wildmode=full
 
 " buftabs
-" set buftabs-maxlength=20
-" set buftabs-completer=~
+set buftabs-maxlength=20
 
 " noscript
 nmap -builtin a :noscript popup<CR>
