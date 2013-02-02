@@ -17,7 +17,6 @@ Bundle 'godlygeek/tabular'
 Bundle 'honza/snipmate-snippets'
 Bundle 'kien/ctrlp.vim'
 Bundle 'Lokaltog/vim-easymotion'
-Bundle 'Lokaltog/vim-powerline'
 Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'nvie/vim-flake8'
 Bundle 'powerman/vim-plugin-viewdoc'
@@ -180,27 +179,23 @@ let g:secure_modelines_modelines=2
 " Autocommands
 "
 
-if has("autocmd")
+" Less indentation for some filetypes
+autocmd FileType vim,sh,zsh,PKGBUILD set ts=2 sts=2 sw=2
 
-  " Less indentation for some filetypes
-  autocmd FileType vim,sh,zsh,PKGBUILD set ts=2 sts=2 sw=2
+" Compile and run
+autocmd FileType python map <F9> :w \| :!python2 "%"<CR>
+autocmd FileType cpp    map <F9> :w \| :call RunMake("g++")<CR>
+autocmd FileType c      map <F9> :w \| :call RunMake("gcc")<CR>
+autocmd FileType sh     map <F9> :w \| :!./"%"<CR>
 
-  " Compile and run
-  autocmd FileType python map <F9> :w \| :!python2 "%"<CR>
-  autocmd FileType cpp    map <F9> :w \| :call RunMake("g++")<CR>
-  autocmd FileType c      map <F9> :w \| :call RunMake("gcc")<CR>
-  autocmd FileType sh     map <F9> :w \| :!./"%"<CR>
+" Spice up C syntax higlighting
+autocmd FileType c,cpp :call CSyntaxPlus()
 
-  " Spice up C syntax higlighting
-  autocmd FileType c,cpp :call CSyntaxPlus()
-
-  " Return cursor to the last line you were editing
-  autocmd BufReadPost *
-    \ if line("'\"") > 0 && line ("'\"") <= line("$") |
-    \   exe "normal g'\"" |
-    \ endif
-
-endif
+" Return cursor to the last line you were editing
+autocmd BufReadPost *
+  \ if line("'\"") > 0 && line ("'\"") <= line("$") |
+  \   exe "normal g'\"" |
+  \ endif
 
 "
 " Functions
@@ -252,3 +247,45 @@ function! Z(...)
   endif
 endfunction
 
+"
+" Statusline
+"
+
+hi StatColor ctermbg=green ctermfg=black
+hi Modified ctermbg=grey ctermfg=black
+
+function! MyStatusLine(mode)
+    let statusline=""
+    if a:mode == 'Enter'
+        let statusline.="%#StatColor#"
+    endif
+    let statusline.="\(%n\)\ %f\ "
+    if a:mode == 'Enter'
+        let statusline.="%*"
+    endif
+    let statusline.=" %#Modified#%m"
+    if a:mode == 'Leave'
+        let statusline.="%*%r"
+    elseif a:mode == 'Enter'
+        let statusline.="%r%*"
+    endif
+    let statusline .= "\ (%l/%L,\ %c)\ %P%=%h%w\ %y\ [%{&encoding}:%{&fileformat}]\ \ "
+    return statusline
+endfunction
+
+autocmd WinEnter * setlocal statusline=%!MyStatusLine('Enter')
+autocmd WinLeave * setlocal statusline=%!MyStatusLine('Leave')
+set statusline=%!MyStatusLine('Enter')
+
+function! InsertStatuslineColor(mode)
+  if a:mode == 'i'
+    hi StatColor ctermbg=blue
+  elseif a:mode == 'r'
+    hi StatColor ctermbg=magenta
+  else
+    hi StatColor ctermbg=red
+  endif
+endfunction 
+
+autocmd InsertEnter * call InsertStatuslineColor(v:insertmode)
+autocmd InsertLeave * hi StatColor ctermbg=green ctermfg=black
