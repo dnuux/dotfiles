@@ -16,13 +16,13 @@ monster_init() {
 # keyboard
 xset r rate 350 45
 setxkbmap fi nodeadkeys
-xmodmap "${HOME}/.speedswapper"
+xmodmap "$HOME/.speedswapper"
 
 # X resources
-xrdb -merge "${HOME}/.Xresources"
+xrdb -merge "$HOME/.Xresources"
 
 # wallpaper
-bgs -s "${HOME}/.wallpaper"
+bgs -s "$HOME/.wallpaper"
 
 # URxvt daemon
 urxvtd -q -o -f &
