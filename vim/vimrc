@@ -21,6 +21,7 @@ Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'nvie/vim-flake8'
 Bundle 'powerman/vim-plugin-viewdoc'
 Bundle 'scrooloose/nerdtree'
+Bundle 'scrooloose/syntastic'
 Bundle 'spolu/dwm.vim'
 Bundle 'tomtom/tlib_vim'
 Bundle 'Townk/vim-autoclose'
@@ -49,8 +50,6 @@ set completeopt=menuone,preview      " options for insert mode completion
 set cursorline                       " highlight the line the cursor is on
 set encoding=utf-8                   " set default encoding to UTF-8
 set expandtab                        " use spaces instead of tab characters
-set foldmethod=indent                " fold indented blocks
-set foldnestmax=1                    " maximum nesting of folds
 set gdefault                         " replace globally by default
 set hidden                           " hide buffers instead of closing them
 set hlsearch                         " highlight search terms
