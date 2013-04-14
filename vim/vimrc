@@ -6,6 +6,7 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 Bundle 'a.vim'
+Bundle 'airblade/vim-gitgutter'
 Bundle 'argtextobj.vim'
 Bundle 'ciaranm/securemodelines'
 Bundle 'Cloudef/dotFiles', {'rtp': '.vim/bundle/cSyntaxPlus/'}
@@ -13,7 +14,8 @@ Bundle 'coderifous/textobj-word-column.vim'
 Bundle 'garbas/vim-snipmate'
 Bundle 'gmarik/vundle'
 Bundle 'godlygeek/tabular'
-Bundle 'honza/snipmate-snippets'
+Bundle 'honza/vim-snippets'
+Bundle 'kana/vim-filetype-haskell'
 Bundle 'kien/ctrlp.vim'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'MarcWeber/vim-addon-mw-utils'
@@ -27,6 +29,7 @@ Bundle 'Townk/vim-autoclose'
 Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-eunuch'
 Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-obsession'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
 Bundle 'w0ng/vim-hybrid'
@@ -172,7 +175,7 @@ nnoremap <leader>: :Tabular /:<CR>
 nnoremap <leader>\ :Tabular /\<CR>
 
 " Secure modelines
-let g:secure_modelines_modelines=2
+let g:secure_modelines_modelines = 2
 
 "
 " Autocommands
