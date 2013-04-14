@@ -17,13 +17,9 @@ set hintmatching=firstletters
 set history=10
 set hlfind
 set popups=tab
-set showtabline=never
 set titlestring="Mozzarella Firefux"
 set urlseparator=',,'
 set wildmode=full
-
-" buftabs
-set buftabs-maxlength=20
 
 " noscript
 nmap -builtin a :noscript popup<CR>
