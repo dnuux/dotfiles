@@ -1,6 +1,5 @@
 set recolor true
-set show_inputbar false
-
-set statusbar_bgcolor #1A1A1A
-set recolor_darkcolor #E0E0E0
-set recolor_lightcolor #1F1F21
+set default-bg "#1A1A1A"
+set statusbar-bg "#1A1A1A"
+set recolor-darkcolor "#E0E0E0"
+set recolor-lightcolor "#1A1A1A"
