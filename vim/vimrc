@@ -20,7 +20,6 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'nvie/vim-flake8'
-Bundle 'powerman/vim-plugin-viewdoc'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
 Bundle 'spolu/dwm.vim'
@@ -153,9 +152,6 @@ let g:ctrlp_user_command = "find %s -type f | grep -v /.git/"
 " EasyMotion
 let g:EasyMotion_leader_key = '<Leader>'
 
-" Flake8
-let g:flake8_cmd = 'flake8-python2'
-
 " Fugitive
 nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>gg :Ggrep<Space>
@@ -185,7 +181,7 @@ let g:secure_modelines_modelines = 2
 autocmd FileType vim,sh,zsh,PKGBUILD set ts=2 sts=2 sw=2
 
 " Compile and run
-autocmd FileType python map <F9> :w \| :!python2 "%"<CR>
+autocmd FileType python map <F9> :w \| :!python "%"<CR>
 autocmd FileType cpp    map <F9> :w \| :call RunMake("g++")<CR>
 autocmd FileType c      map <F9> :w \| :call RunMake("gcc")<CR>
 autocmd FileType sh     map <F9> :w \| :!./"%"<CR>
