@@ -65,6 +65,19 @@ zstyle ':prezto:module:editor' keymap 'vi'
 # zstyle ':prezto:module:gnu-utility' prefix 'g'
 
 #
+# History Substring Search
+#
+
+# Set the query found color.
+# zstyle ':prezto:module:history-substring-search:color' found ''
+
+# Set the query not found color.
+# zstyle ':prezto:module:history-substring-search:color' not-found ''
+
+# Set the search globbing flags.
+# zstyle ':prezto:module:history-substring-search' globbing-flags ''
+
+#
 # Pacman
 #
 
@@ -88,13 +101,6 @@ zstyle ':prezto:module:prompt' theme 'soliah'
 # zstyle ':prezto:module:screen' auto-start 'yes'
 
 #
-# GPG-Agent
-#
-
-# Enable SSH-Agent protocol emulation.
-# zstyle ':prezto:module:gpg-agent' ssh-support 'yes'
-
-#
 # SSH-Agent
 #
 
@@ -109,11 +115,28 @@ zstyle ':prezto:module:prompt' theme 'soliah'
 #
 
 # Set syntax highlighters.
-# By default main, brackets, and cursor are enabled.
+# By default, only the main highlighter is enabled.
 zstyle ':prezto:module:syntax-highlighting' highlighters \
-  'main'     \
-  'brackets' \
-  'pattern'
+  'main' \
+  'brackets'
+
+# Set syntax highlighting styles.
+zstyle ':prezto:module:syntax-highlighting' styles \
+  'alias' 'fg=blue,bold'                     \
+  'back-double-quoted-argument' 'fg=green'   \
+  'back-quoted-argument' 'fg=green'          \
+  'builtin' 'fg=blue,bold'                   \
+  'command' 'fg=blue,bold'                   \
+  'dollar-double-quoted-argument' 'fg=green' \
+  'double-hyphen-option' 'fg=yellow'         \
+  'double-quoted-argument' 'fg=green'        \
+  'function' 'fg=blue,bold'                  \
+  'globbing' 'fg=yellow,bold'                \
+  'hashed-command' 'fg=blue,bold'            \
+  'path' 'fg=green,bold'                     \
+  'precommand' 'fg=magenta,bold'             \
+  'single-hyphen-option' 'fg=yellow'         \
+  'single-quoted-argument' 'fg=green'        \
 
 #
 # Terminal
