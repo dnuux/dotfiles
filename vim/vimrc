@@ -149,9 +149,6 @@ nnoremap <leader>= :Tabular /=<CR>
 nnoremap <leader>: :Tabular /:<CR>
 nnoremap <leader>\ :Tabular /\<CR>
 
-" Rainbow Parentheses
-au VimEnter * RainbowParenthesesToggleAll
-
 " Secure modelines
 let g:secure_modelines_modelines = 2
 
@@ -161,6 +158,10 @@ let g:secure_modelines_modelines = 2
 
 " Less indentation for some filetypes
 autocmd FileType vim,sh,zsh,PKGBUILD set ts=2 sts=2 sw=2
+
+" Rainbow Parentheses
+autocmd VimEnter * RainbowParenthesesToggleAll
+
 
 "
 " Functions
