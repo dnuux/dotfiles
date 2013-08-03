@@ -15,6 +15,7 @@ Bundle 'godlygeek/tabular'
 Bundle 'goldfeld/vim-seek'
 Bundle 'kana/vim-filetype-haskell'
 Bundle 'kien/ctrlp.vim'
+Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
@@ -39,7 +40,7 @@ colorscheme hybrid                   " colorscheme
 
 set autoindent                       " copy current indent level when starting new line
 set backspace=start,indent,eol       " make backspace work like 'normal' text editors
-set completeopt=menuone,preview      " options for insert mode completion
+set completeopt=menu,longest         " options for insert mode completion
 set cursorline                       " highlight the line the cursor is on
 set expandtab                        " use spaces instead of tab characters
 set gdefault                         " replace globally by default
@@ -51,6 +52,7 @@ set linebreak                        " don't wrap on middle of words
 set noswapfile                       " don't make swap file
 set number                           " show line numbers
 set pastetoggle=<F2>                 " toggle paste mode via F2
+set ruler                            " show the line and column number
 set scrolloff=8                      " start scrolling when within 8 lines near top/bottom
 set shiftround                       " round indent to multiple of shiftwidth
 set shiftwidth=4                     " number of spaces to use for autoindent
@@ -146,6 +148,9 @@ nnoremap <F12> :NERDTreeToggle<CR>
 nnoremap <leader>= :Tabular /=<CR>
 nnoremap <leader>: :Tabular /:<CR>
 nnoremap <leader>\ :Tabular /\<CR>
+
+" Rainbow Parentheses
+au VimEnter * RainbowParenthesesToggleAll
 
 " Secure modelines
 let g:secure_modelines_modelines = 2
