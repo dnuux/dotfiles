@@ -9,27 +9,20 @@ Bundle 'a.vim'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'argtextobj.vim'
 Bundle 'ciaranm/securemodelines'
-Bundle 'Cloudef/dotFiles', {'rtp': '.vim/bundle/cSyntaxPlus/'}
 Bundle 'coderifous/textobj-word-column.vim'
-Bundle 'garbas/vim-snipmate'
 Bundle 'gmarik/vundle'
 Bundle 'godlygeek/tabular'
 Bundle 'goldfeld/vim-seek'
-Bundle 'honza/vim-snippets'
 Bundle 'kana/vim-filetype-haskell'
 Bundle 'kien/ctrlp.vim'
 Bundle 'Lokaltog/vim-easymotion'
-Bundle 'MarcWeber/vim-addon-mw-utils'
-Bundle 'nvie/vim-flake8'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
+Bundle 'SirVer/ultisnips'
 Bundle 'spolu/dwm.vim'
-Bundle 'tomtom/tlib_vim'
-Bundle 'Townk/vim-autoclose'
 Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-eunuch'
 Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-obsession'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
 Bundle 'w0ng/vim-hybrid'
@@ -45,24 +38,17 @@ let g:hybrid_use_Xresources = 1      " use .Xresources colors for hybrid
 colorscheme hybrid                   " colorscheme
 
 set autoindent                       " copy current indent level when starting new line
-set autoread                         " automatically read file that has been changed
 set backspace=start,indent,eol       " make backspace work like 'normal' text editors
 set completeopt=menuone,preview      " options for insert mode completion
 set cursorline                       " highlight the line the cursor is on
-set encoding=utf-8                   " set default encoding to UTF-8
 set expandtab                        " use spaces instead of tab characters
 set gdefault                         " replace globally by default
 set hidden                           " hide buffers instead of closing them
 set hlsearch                         " highlight search terms
-set ignorecase                       " ignore case when searching
 set incsearch                        " show search matches as they are found
-set laststatus=2                     " always show statusline
 set lazyredraw                       " don't redraw when executing macros
 set linebreak                        " don't wrap on middle of words
-set mouse=a                          " enable mouse support
-set noesckeys                        " get rid of the delay when hitting esc
 set noswapfile                       " don't make swap file
-set nrformats-=octal                 " don't treat numbers with leading zeros as octal
 set number                           " show line numbers
 set pastetoggle=<F2>                 " toggle paste mode via F2
 set scrolloff=8                      " start scrolling when within 8 lines near top/bottom
@@ -77,7 +63,6 @@ set splitright                       " vertical splits go to right
 set tabstop=4                        " width of a tab character in spaces
 set timeoutlen=300                   " don't wait so long for the next keypress
 set ttyfast                          " improve smoothness of redrawing
-set ttymouse=xterm2                  " resize buffers with mouse
 set updatecount=0                    " we don't use no swap files
 set virtualedit=block                " allow moving outside text bounds in visual block mode
 set wildmenu                         " enhance command line completion
@@ -108,11 +93,6 @@ nnoremap L $
 nnoremap Y y$
 nnoremap Q @@
 nnoremap U :redo<CR>
-nnoremap <Space> za
-
-" Use sane regexes
-nnoremap / /\v
-vnoremap / /\v
 
 " Jump to matching braces easily
 nnoremap <Tab> %
@@ -134,9 +114,6 @@ vnoremap > >gv
 
 " Strip all trailing whitespace from file
 nnoremap <leader>tr :%s/\s\+$//<CR>:let @/=''<CR>
-
-" Replace single line python imports with multiline
-nnoremap <leader>im :s/,/\rimport/<CR>
 
 " Reselect pasted text
 nnoremap <leader>p V`]`
@@ -161,9 +138,8 @@ nnoremap <leader>gb :Gblame<CR>
 
 " NERDTree
 let g:NERDTreeChDirMode = 2
-let g:NERDTreeIgnore    = ['\~$', '\.swp$', '\.o$']
-let g:NERDTreeSortOrder = ['^__\.py$', '\/$', '*']
 let g:NERDTreeMinimalUI = 1
+let g:NERDTreeIgnore    = ['\~$', '\.swp$', '\.o$', '\.pyc$', '\.hi$']
 nnoremap <F12> :NERDTreeToggle<CR>
 
 " Tabular
@@ -181,42 +157,9 @@ let g:secure_modelines_modelines = 2
 " Less indentation for some filetypes
 autocmd FileType vim,sh,zsh,PKGBUILD set ts=2 sts=2 sw=2
 
-" Compile and run
-autocmd FileType python map <F9> :w \| :!python "%"<CR>
-autocmd FileType cpp    map <F9> :w \| :call RunMake("g++")<CR>
-autocmd FileType c      map <F9> :w \| :call RunMake("gcc")<CR>
-autocmd FileType sh     map <F9> :w \| :!./"%"<CR>
-
-" Spice up C syntax higlighting
-autocmd FileType c,cpp :call CSyntaxPlus()
-
-" Return cursor to the last line you were editing
-autocmd BufReadPost *
-  \ if line("'\"") > 0 && line ("'\"") <= line("$") |
-  \   exe "normal g'\"" |
-  \ endif
-
 "
 " Functions
 "
-
-" Append modeline to file
-function! AppendModeline()
-  let l:modeline = printf(" vim: set sw=%d ts=%d sts=%d :",
-          \ &shiftwidth, &tabstop, &softtabstop)
-  let l:modeline = substitute(&commentstring, "%s", l:modeline, "")
-  call append(line("$"), l:modeline)
-endfunction
-nnoremap <leader>ml :call AppendModeline()<CR>
-
-" Run make if Makefile exists, otherwise compile and run
-function! RunMake(compiler)
-  if filereadable("Makefile")
-    make
-  else
-    execute '!' . a:compiler . ' "%" -Wall -O2 -march=native && ./a.out'
-  endif
-endfunction
 
 " Quickly toggle relativenumber
 if exists("&relativenumber")
@@ -231,60 +174,3 @@ if exists("&relativenumber")
   endfunction
   nnoremap <silent> <leader>m :<C-U>call <SID>ToggleRelativeNumber()<CR>
 endif
-
-" Quickly jump to directories with fasd
-command! -nargs=* Z :call Z(<f-args>)
-function! Z(...)
-  let cmd = 'fasd -d -e printf'
-  for arg in a:000
-    let cmd = cmd . ' ' . arg
-  endfor
-  let path = system(cmd)
-  if isdirectory(path)
-    echo path
-    exec 'cd ' . path
-  endif
-endfunction
-
-"
-" Statusline
-"
-
-hi StatColor ctermbg=green ctermfg=black
-hi Modified ctermbg=grey ctermfg=black
-
-function! MyStatusLine(mode)
-    let statusline=""
-    if a:mode == 'Enter'
-        let statusline.="%#StatColor#"
-    endif
-    let statusline.="\(%n\)\ %f\ "
-    if a:mode == 'Enter'
-        let statusline.="%*"
-    endif
-    let statusline.=" %#Modified#%m"
-    if a:mode == 'Leave'
-        let statusline.="%*%r"
-    elseif a:mode == 'Enter'
-        let statusline.="%r%*"
-    endif
-    let statusline .= "\ (%l/%L,\ %c)\ %P%=%h%w\ %y\ [%{&encoding}:%{&fileformat}]\ \ "
-    return statusline
-endfunction
-
-autocmd WinEnter * setlocal statusline=%!MyStatusLine('Enter')
-autocmd WinLeave * setlocal statusline=%!MyStatusLine('Leave')
-set statusline=%!MyStatusLine('Enter')
-
-function! InsertStatuslineColor(mode)
-  if a:mode == 'i'
-    hi StatColor ctermbg=blue
-  elseif a:mode == 'r'
-    hi StatColor ctermbg=magenta
-  else
-    hi StatColor ctermbg=red
-  endif
-endfunction 
-
-autocmd InsertEnter * call InsertStatuslineColor(v:insertmode)
-autocmd InsertLeave * hi StatColor ctermbg=green ctermfg=black
