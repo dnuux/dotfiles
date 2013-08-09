@@ -132,6 +132,8 @@ zstyle ':prezto:module:syntax-highlighting' styles \
   'globbing' 'fg=yellow,bold'                \
   'hashed-command' 'fg=blue,bold'            \
   'path' 'fg=green,bold'                     \
+  'path_prefix' 'fg=green,bold'              \
+  'path_approx' 'fg=green,bold'              \
   'precommand' 'fg=magenta,bold'             \
   'single-hyphen-option' 'fg=yellow'         \
   'single-quoted-argument' 'fg=green'        \
