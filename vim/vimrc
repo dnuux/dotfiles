@@ -13,6 +13,7 @@ Bundle 'coderifous/textobj-word-column.vim'
 Bundle 'gmarik/vundle'
 Bundle 'godlygeek/tabular'
 Bundle 'goldfeld/vim-seek'
+Bundle 'itchyny/lightline.vim'
 Bundle 'kana/vim-filetype-haskell'
 Bundle 'kien/ctrlp.vim'
 Bundle 'kien/rainbow_parentheses.vim'
@@ -47,6 +48,7 @@ set gdefault                         " replace globally by default
 set hidden                           " hide buffers instead of closing them
 set hlsearch                         " highlight search terms
 set incsearch                        " show search matches as they are found
+set laststatus=2                     " always show status line
 set lazyredraw                       " don't redraw when executing macros
 set linebreak                        " don't wrap on middle of words
 set noswapfile                       " don't make swap file
@@ -148,6 +150,7 @@ nnoremap <F12> :NERDTreeToggle<CR>
 nnoremap <leader>= :Tabular /=<CR>
 nnoremap <leader>: :Tabular /:<CR>
 nnoremap <leader>\ :Tabular /\<CR>
+nnoremap <leader>, :Tabular /,<CR>
 
 " Secure modelines
 let g:secure_modelines_modelines = 2
@@ -161,21 +164,3 @@ autocmd FileType vim,sh,zsh,PKGBUILD set ts=2 sts=2 sw=2
 
 " Rainbow Parentheses
 autocmd VimEnter * RainbowParenthesesToggleAll
-
-"
-" Functions
-"
-
-" Quickly toggle relativenumber
-if exists("&relativenumber")
-  function! s:ToggleRelativeNumber()
-    if &relativenumber
-      set norelativenumber
-      let &number = b:togglernu_number
-    else
-      let b:togglernu_number = &number
-      set relativenumber
-    endif
-  endfunction
-  nnoremap <silent> <leader>m :<C-U>call <SID>ToggleRelativeNumber()<CR>
-endif
