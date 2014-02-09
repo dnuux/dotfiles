@@ -11,19 +11,19 @@ URxvt*scrollBar:        false
 URxvt*borderLess:       false
 
 ! -- URxvt Extensions --!
-URxvt.perl-ext-common:       default,url-select,keyboard-select,confirm-paste
-URxvt.keysym.M-Escape:       perl:keyboard-select:activate
-URxvt.keysym.M-s:            perl:keyboard-select:search
-URxvt.keysym.Delete:         perl:url-select:select_next
-URxvt.url-select.launcher:   firefox-beta-bin
-URxvt.url-select.underline:  true
-URxvt.url-select.button:     1
+URxvt.perl-ext-common:      default,url-select,keyboard-select,confirm-paste
+URxvt.keysym.M-Escape:      perl:keyboard-select:activate
+URxvt.keysym.M-s:           perl:keyboard-select:search
+URxvt.keysym.Delete:        perl:url-select:select_next
+URxvt.url-select.launcher:  firefox-beta-bin
+URxvt.url-select.underline: true
+URxvt.url-select.button:    1
 
 ! -- Fonts -- !
 URxvt.font:xft:DejaVuSansMono:bold:pixelsize=10:antialias=true
 
 ! -- Dzen settings -- !
-dzen2.font:       xft:DejaVu:bold:pixelsize=10:antialias=true
+dzen2.font: xft:DejaVu:bold:pixelsize=10:antialias=true
 dzen2.background: #151515
 
 ! -- Colours -- !

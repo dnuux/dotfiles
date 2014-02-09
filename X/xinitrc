@@ -32,7 +32,7 @@ fi
 bgs -s "$HOME/.wallpaper"
 
 # color profile for MacBook
-xcalib -s eDP1 "$HOME/.config/colorprofiles/macbook.icc" &
+xcalib -s eDP1 "$HOME/.config/colorprofiles/macbook.icc"
 
 # window manager
 sxhkd -f 100 &
