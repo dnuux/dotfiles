@@ -6,21 +6,21 @@ active_bg_color = -1
 
 # Maximum connections for active torrents
 # min_peers = 40
-max_peers = 104
+# max_peers = 100
 
 # Maximum connections for seeding torrents
 # min_peers_seed = 10
-max_peers_seed = 104
+# max_peers_seed = 50
 
 # Maximum simultanious uploads per torrent
-max_uploads = 14
+# max_uploads = 15
 
 # Global upload and download rate in KiB. "0" for unlimited.
-download_rate = 0
-upload_rate = 80
+# download_rate = 0
+# upload_rate = 0
 
 # Port to use for listening
-port_range = 56558-56558
+port_range = 51413-51413
 port_random = no
 check_hash = no
 use_udp_trackers = yes
@@ -32,10 +32,6 @@ encryption = allow_incoming,try_outgoing,enable_retry
 dht = auto
 dht_port = 6881
 peer_exchange = yes
-
-# Sort by creation date
-view_sort_new = main,less=d.get_creation_date=
-view_sort_current = main,less=d.get_creation_date=
 
 # Default download directory
 directory = /media/External_HDD/Lataukset
