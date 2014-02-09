@@ -1,17 +1,4 @@
-#!/bin/dash
-
-monster_init() {
-  local ff="/tmp/monsterwm.fifo"
-
-  monsterpager "$ff" | \
-    dzen2 -h 18 -x 1920 -w 420 -ta l -e -p &
-  monsterstatus | \
-    dzen2 -h 18 -x 2340 -w 1500 -ta r -e -p &
-
-  while [ ! -p "$ff" ]; do sleep 1; done
-  exec monsterwm > "$ff"
-  [ -p "$ff" ] && rm "$ff"
-}
+#!/bin/sh
 
 # keyboard
 xset r rate 350 45
@@ -21,9 +8,6 @@ xmodmap "$HOME/.speedswapper"
 # X resources
 xrdb -merge "$HOME/.Xresources"
 
-# wallpaper
-bgs -s "$HOME/.wallpaper"
-
 # URxvt daemon
 urxvtd -q -o -f &
 
@@ -31,10 +15,25 @@ urxvtd -q -o -f &
 xsetroot -cursor_name left_ptr &
 unclutter -idle 10 -jitter 5 &
 
+# program to bind mouse buttons
+xbindkeys
+
 # programs
 (firefox-beta-bin > /dev/null 2>&1) &
-(sleep 10 && urxvtc -sl 0 -name htop -e htop) &
-(sleep 15 && urxvtc -sl 0 -name vifm -e vifm) &
+
+# check if external monitor is connected
+if (xrandr | grep 'HDMI1 disconnected'); then
+    xrandr --output eDP1 --mode 1440x900 --pos 0x0 --output HDMI1 --off
+else
+    xrandr --output eDP1 --mode 1440x900 --pos 0x0 --output HDMI1 --mode 1920x1200 --pos 1440x0
+fi
+
+# wallpaper
+bgs -s "$HOME/.wallpaper"
+
+# color profile for MacBook
+xcalib -s eDP1 "$HOME/.config/colorprofiles/macbook.icc" &
 
 # window manager
-monster_init
+sxhkd -f 100 &
+exec bspwm
