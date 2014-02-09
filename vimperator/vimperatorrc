@@ -1,0 +1,61 @@
+" general options
+set animations
+set complete=sl
+set defsearch=d
+set editor='urxvt -e vim -X'
+set gui=noaddons,nobookmarks,nomenu,nonavigation,tabs
+set hintchars=aoeuhkns
+set hintmatching=firstletters
+set history=10
+set hlsearch
+set noscrollbars
+set titlestring="Mozzarella Firefux"
+set urlseparator=',,'
+
+" leader key
+map , <Leader>
+
+" can't remember sites I visit
+map <Leader>a :bmarks! -T arch<CR>
+map <Leader>r :bmarks! -T reddits<CR>
+
+" easy access to downloads
+map <Leader>l :downloads<CR>
+
+" easier way to detach a tab
+map <Leader>t :tabdetach<CR>
+
+" turn off search highlighting
+nmap <C-Space> :nohlsearch<CR>
+
+" faster scrolling
+nnoremap h 5h
+nnoremap j 5j
+nnoremap k 5k
+nnoremap l 5l
+nmap <Space> <C-d>
+nmap <S-Space> <C-u>
+
+" map K and J to next and prev tab
+nmap K :tn<CR>
+nmap J :tp<CR>
+
+" easier tab moving
+nmap <S-C-k> :tabmove +1<CR>
+nmap <S-C-j> :tabmove -1<CR>
+
+" prevent accidental closing
+nmap <C-q> <nop>
+nmap q <nop>
+
+" open in background tab
+nmap <C-t> :tabopen!<Space>
+
+" some sites have handy keyboard shortcuts
+ignorekeys add -except ;,g,G,d,r,t,o,u,f,F www\\.reddit\\.com
+
+" stop da music
+autocmd PageLoad youtube.com/watch* :silent !mpc pause -q
+
+" view native size of image without clicking it
+nmap <Leader>z :js window.content.document.toggleImageSize();<CR>
