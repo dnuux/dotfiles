@@ -5,14 +5,9 @@
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
-Bundle 'a.vim'
 Bundle 'airblade/vim-gitgutter'
-Bundle 'argtextobj.vim'
-Bundle 'ciaranm/securemodelines'
-Bundle 'coderifous/textobj-word-column.vim'
 Bundle 'gmarik/vundle'
 Bundle 'godlygeek/tabular'
-Bundle 'goldfeld/vim-seek'
 Bundle 'itchyny/lightline.vim'
 Bundle 'kana/vim-filetype-haskell'
 Bundle 'kien/ctrlp.vim'
@@ -20,7 +15,6 @@ Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
-Bundle 'SirVer/ultisnips'
 Bundle 'spolu/dwm.vim'
 Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-eunuch'
@@ -28,50 +22,48 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
 Bundle 'w0ng/vim-hybrid'
+Bundle 'wellle/targets.vim'
 
 "
 " Options
 "
 
-syntax on                            " turn on syntax highlighting
-filetype plugin indent on            " turn on ftplugin and indent
-let mapleader = ","                  " map leader to ,
-let g:hybrid_use_Xresources = 1      " use .Xresources colors for hybrid
-colorscheme hybrid                   " colorscheme
+syntax on
+filetype plugin indent on
+let mapleader = ","
+let g:hybrid_use_Xresources = 1
+colorscheme hybrid
 
-set autoindent                       " copy current indent level when starting new line
-set backspace=start,indent,eol       " make backspace work like 'normal' text editors
-set completeopt=menu,longest         " options for insert mode completion
-set cursorline                       " highlight the line the cursor is on
-set expandtab                        " use spaces instead of tab characters
-set gdefault                         " replace globally by default
-set hidden                           " hide buffers instead of closing them
-set hlsearch                         " highlight search terms
-set incsearch                        " show search matches as they are found
-set laststatus=2                     " always show status line
-set lazyredraw                       " don't redraw when executing macros
-set linebreak                        " don't wrap on middle of words
-set noswapfile                       " don't make swap file
-set number                           " show line numbers
-set pastetoggle=<F2>                 " toggle paste mode via F2
-set ruler                            " show the line and column number
-set scrolloff=8                      " start scrolling when within 8 lines near top/bottom
-set shiftround                       " round indent to multiple of shiftwidth
-set shiftwidth=4                     " number of spaces to use for autoindent
-set showcmd                          " show the command being typed
-set showmatch                        " show matching braces when text indicator is over them
-set smartcase                        " case sensitive only when capital letter in expression
-set softtabstop=4                    " defines number of spaces for when adding/remving tabs
-set splitbelow                       " horizontal splits go to below
-set splitright                       " vertical splits go to right
-set tabstop=4                        " width of a tab character in spaces
-set timeoutlen=300                   " don't wait so long for the next keypress
-set ttyfast                          " improve smoothness of redrawing
-set updatecount=0                    " we don't use no swap files
-set virtualedit=block                " allow moving outside text bounds in visual block mode
-set wildmenu                         " enhance command line completion
-set wildmode=longest,list:full       " command prompt tab-completion
-set wrap                             " wrap lines
+set autoindent
+set backspace=start,indent,eol
+set completeopt=menu,longest
+set cursorline
+set expandtab
+set gdefault
+set hidden
+set hlsearch
+set incsearch
+set laststatus=2
+set lazyredraw
+set linebreak
+set modelines=2
+set noswapfile
+set number
+set pastetoggle=<F2>
+set scrolloff=8
+set shiftround
+set shiftwidth=4
+set showcmd
+set smartcase
+set softtabstop=4
+set tabstop=4
+set timeoutlen=300
+set ttyfast
+set updatecount=0
+set virtualedit=block
+set wildmenu
+set wildmode=longest,list:full
+set wrap
 
 " Backup
 set backup
@@ -84,7 +76,7 @@ set listchars=tab:→\ ,trail:·
 set list
 
 " Ignore unndeeded files
-set wildignore+=*.bak,*.swp,*.git,*.pyc,*.pyo,*.o
+set wildignore+=*.bak,*.swp,*.git,*.pyc,*.pyo,*.o,*.hi
 
 "
 " Mappings
@@ -151,9 +143,6 @@ nnoremap <leader>= :Tabular /=<CR>
 nnoremap <leader>: :Tabular /:<CR>
 nnoremap <leader>\ :Tabular /\<CR>
 nnoremap <leader>, :Tabular /,<CR>
-
-" Secure modelines
-let g:secure_modelines_modelines = 2
 
 "
 " Autocommands
