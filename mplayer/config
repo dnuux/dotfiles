@@ -1,9 +1,0 @@
-# Outputs
-vo=vdpau
-ao=alsa
-
-# Aspect ratio
-monitoraspect=16:10
-
-# Multithreaded decoding of H264
-lavdopts=threads=2

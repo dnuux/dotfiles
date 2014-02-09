@@ -1,0 +1,9 @@
+# Video
+vo=vaapi,opengl,xv
+hwdec=vaapi
+
+# Audio
+ao=alsa
+
+# Misc
+keep-open=yes
