@@ -52,7 +52,7 @@ nmap q <nop>
 nmap <C-t> :tabopen!<Space>
 
 " some sites have handy keyboard shortcuts
-ignorekeys add -except ;,g,G,d,r,t,o,u,f,F,m,` www\\.reddit\\.com
+ignorekeys add -except ;,g,G,d,r,t,o,u,y,b,f,F,m,` www\\.reddit\\.com
 
 " stop da music
 autocmd PageLoad youtube.com/watch* :silent !mpc pause -q
