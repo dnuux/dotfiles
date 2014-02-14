@@ -1,4 +1,4 @@
-! -- Urxvt settings -- !
+! -- URxvt settings -- !
 URxvt.buffered:         true
 URxvt.background:       #1A1A1A
 URxvt.foreground:       #A9A9A9
@@ -20,7 +20,7 @@ URxvt.url-select.underline: true
 URxvt.url-select.button:    1
 
 ! -- Fonts -- !
-URxvt.font:xft:DejaVuSansMono:bold:pixelsize=10:antialias=true
+URxvt.font: xft:DejaVuSansMono:bold:pixelsize=10:antialias=true
 
 ! -- Dzen settings -- !
 dzen2.font: xft:DejaVu:bold:pixelsize=10:antialias=true

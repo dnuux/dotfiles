@@ -15,11 +15,9 @@ urxvtd -q -o -f &
 xsetroot -cursor_name left_ptr &
 unclutter -idle 10 -jitter 5 &
 
-# program to bind mouse buttons
-xbindkeys
-
 # programs
 (firefox-beta-bin > /dev/null 2>&1) &
+xbindkeys
 
 # check if external monitor is connected
 if (xrandr | grep 'HDMI1 disconnected'); then
@@ -31,7 +29,7 @@ fi
 # wallpaper
 bgs -s "$HOME/.wallpaper"
 
-# color profile for MacBook
+# color profile for MacBook Air
 xcalib -s eDP1 "$HOME/.config/colorprofiles/macbook.icc"
 
 # window manager
