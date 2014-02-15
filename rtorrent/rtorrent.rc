@@ -17,7 +17,7 @@ color_finished_fg = 2
 
 # Global upload and download rate in KiB. "0" for unlimited.
 # download_rate = 0
-# upload_rate = 0
+upload_rate = 90
 
 # Port to use for listening
 port_range = 51413-51413
