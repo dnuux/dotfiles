@@ -1,0 +1,27 @@
+#!/bin/sh
+
+if (xrandr | grep 'HDMI1 disconnected'); then
+  bspc monitor -d a b c d
+  bspc desktop ^2 -l monocle
+  monsterstatus | dzen2 -h 18 -x 0 -w 1440 -ta r -e -p &
+else
+  bspc monitor HDMI1 -d a b c d
+  bspc monitor eDP1 -d e
+  bspc desktop ^4 -l monocle
+  monsterstatus | dzen2 -h 18 -x 1440 -w 1920 -ta r -e -p &
+fi
+
+bspc config border_width         2
+bspc config window_gap           4
+bspc config split_ratio          0.52
+bspc config top_padding          18
+bspc config auto_cancel          true
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+bspc config history_aware_focus  true
+bspc config focused_border_color "#ff950e"
+
+bspc rule -a mpv floating=on
+bspc rule -a zathura desktop=^3
+bspc rule -a rtorrent desktop=^4
+bspc rule -a Navigator desktop=^2
