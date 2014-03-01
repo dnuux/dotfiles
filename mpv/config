@@ -4,6 +4,3 @@ hwdec=vaapi
 
 # Audio
 ao=alsa
-
-# Misc
-keep-open=yes
