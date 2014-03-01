@@ -3,7 +3,7 @@
 #
 
 super + ctrl + q
-    bspc quit
+    pkill monsterstatus; bspc quit
 
 super + shift + c
     bspc window -c
