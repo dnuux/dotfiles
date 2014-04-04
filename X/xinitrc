@@ -6,7 +6,7 @@ setxkbmap fi nodeadkeys
 xmodmap "$HOME/.speedswapper"
 
 # X resources
-xrdb -merge "$HOME/.Xresources"
+xrdb -load "$HOME/.Xresources"
 
 # URxvt daemon
 urxvtd -q -o -f &

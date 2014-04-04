@@ -3,7 +3,7 @@ set animations
 set complete=sl
 set defsearch=d
 set editor='urxvt -e vim -X'
-set gui=noaddons,nobookmarks,nomenu,nonavigation,tabs
+set gui=noaddons,nomenu,nonavigation,tabs
 set hintchars=aoeuhkns
 set hintmatching=firstletters
 set history=10
