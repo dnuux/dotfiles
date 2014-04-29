@@ -32,7 +32,6 @@ typeset -gU cdpath fpath mailpath path
 
 path=(
   ~/bin
-  ~/bin/toolsched/bin
   $path
 )
 
